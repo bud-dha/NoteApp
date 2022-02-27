@@ -16,5 +16,12 @@ namespace NoteApp.View
         {
             InitializeComponent();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            Form aboutForm = new AboutForm();
+            aboutForm.Show();
+            this.Hide();
+        }
     }
 }
