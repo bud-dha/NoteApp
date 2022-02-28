@@ -16,5 +16,12 @@ namespace NoteApp.View
         {
             InitializeComponent();
         }
+
+        private void NoteForm_Load(object sender, EventArgs e)
+        {
+            Form mainForm = new MainForm();
+            mainForm.Show();
+            this.Hide();
+        }
     }
 }

@@ -17,10 +17,17 @@ namespace NoteApp.View
             InitializeComponent();
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void label3_Click_1(object sender, EventArgs e)
         {
             Form aboutForm = new AboutForm();
             aboutForm.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form noteForm = new NoteForm();
+            noteForm.Show();
             this.Hide();
         }
     }
