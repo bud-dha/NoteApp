@@ -17,11 +17,18 @@ namespace NoteApp.View
             InitializeComponent();
         }
 
-        private void NoteForm_Load(object sender, EventArgs e)
+        private void OkButton_Click(object sender, EventArgs e)
         {
             Form mainForm = new MainForm();
             mainForm.Show();
-            this.Hide();
+            this.Close();
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            Form mainForm = new MainForm();
+            mainForm.Show();
+            this.Close();
         }
     }
 }
