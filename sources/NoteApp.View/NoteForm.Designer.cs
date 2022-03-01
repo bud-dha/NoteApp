@@ -46,7 +46,7 @@
             // 
             this.TitleLabel.AutoSize = true;
             this.TitleLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TitleLabel.Location = new System.Drawing.Point(8, 14);
+            this.TitleLabel.Location = new System.Drawing.Point(8, 12);
             this.TitleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TitleLabel.Name = "TitleLabel";
             this.TitleLabel.Size = new System.Drawing.Size(34, 16);
@@ -57,7 +57,7 @@
             // 
             this.CategoryLabel.AutoSize = true;
             this.CategoryLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CategoryLabel.Location = new System.Drawing.Point(8, 39);
+            this.CategoryLabel.Location = new System.Drawing.Point(8, 37);
             this.CategoryLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CategoryLabel.Name = "CategoryLabel";
             this.CategoryLabel.Size = new System.Drawing.Size(59, 16);
@@ -76,7 +76,7 @@
             // 
             this.NoteFormCreatedLabel.AutoSize = true;
             this.NoteFormCreatedLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NoteFormCreatedLabel.Location = new System.Drawing.Point(8, 66);
+            this.NoteFormCreatedLabel.Location = new System.Drawing.Point(8, 63);
             this.NoteFormCreatedLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NoteFormCreatedLabel.Name = "NoteFormCreatedLabel";
             this.NoteFormCreatedLabel.Size = new System.Drawing.Size(52, 16);
@@ -109,7 +109,7 @@
             this.TitleTextBox.Location = new System.Drawing.Point(69, 10);
             this.TitleTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TitleTextBox.Name = "TitleTextBox";
-            this.TitleTextBox.Size = new System.Drawing.Size(554, 20);
+            this.TitleTextBox.Size = new System.Drawing.Size(854, 20);
             this.TitleTextBox.TabIndex = 6;
             // 
             // NoteFormTextBox
@@ -122,14 +122,14 @@
             this.NoteFormTextBox.Multiline = true;
             this.NoteFormTextBox.Name = "NoteFormTextBox";
             this.NoteFormTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.NoteFormTextBox.Size = new System.Drawing.Size(612, 288);
+            this.NoteFormTextBox.Size = new System.Drawing.Size(912, 378);
             this.NoteFormTextBox.TabIndex = 8;
             // 
             // OkButton
             // 
             this.OkButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.OkButton.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OkButton.Location = new System.Drawing.Point(453, 386);
+            this.OkButton.Location = new System.Drawing.Point(753, 477);
             this.OkButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.OkButton.Name = "OkButton";
             this.OkButton.Size = new System.Drawing.Size(83, 23);
@@ -142,7 +142,7 @@
             // 
             this.CancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.CancelButton.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CancelButton.Location = new System.Drawing.Point(540, 386);
+            this.CancelButton.Location = new System.Drawing.Point(840, 477);
             this.CancelButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(83, 23);
@@ -163,9 +163,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(634, 413);
+            this.ClientSize = new System.Drawing.Size(934, 511);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.OkButton);
@@ -179,8 +177,9 @@
             this.Controls.Add(this.TitleLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.MinimumSize = new System.Drawing.Size(650, 450);
+            this.MinimumSize = new System.Drawing.Size(950, 550);
             this.Name = "NoteForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add/Edit Note";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -19,22 +19,25 @@ namespace NoteApp.View
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Form aboutForm = new AboutForm();
+            aboutForm.Show();
+        }
+
+        private void AddNoteButton_Click(object sender, EventArgs e)
+        {
             var noteForm = new NoteForm();
+            //noteForm.ShowDialog();
+
             var result = noteForm.ShowDialog();
 
             if (result == DialogResult.OK)
             {
                 MessageBox.Show("Заметка сохранена");
             }
-            else {
+            else
+            {
                 MessageBox.Show("Заметка не будет сохранена!");
             }
-        }
-
-        private void AddNoteButton_Click(object sender, EventArgs e)
-        {
-            Form noteForm = new NoteForm();
-            noteForm.ShowDialog();
         }
     }
 }
