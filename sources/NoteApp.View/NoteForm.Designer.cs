@@ -87,7 +87,7 @@
             // 
             this.NoteFormModifiedLabel.AutoSize = true;
             this.NoteFormModifiedLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NoteFormModifiedLabel.Location = new System.Drawing.Point(161, 65);
+            this.NoteFormModifiedLabel.Location = new System.Drawing.Point(175, 63);
             this.NoteFormModifiedLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NoteFormModifiedLabel.Name = "NoteFormModifiedLabel";
             this.NoteFormModifiedLabel.Size = new System.Drawing.Size(59, 16);
@@ -96,7 +96,7 @@
             // 
             // NoteFormModifiedDateTimePicker
             // 
-            this.NoteFormModifiedDateTimePicker.Location = new System.Drawing.Point(224, 61);
+            this.NoteFormModifiedDateTimePicker.Location = new System.Drawing.Point(238, 61);
             this.NoteFormModifiedDateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.NoteFormModifiedDateTimePicker.Name = "NoteFormModifiedDateTimePicker";
             this.NoteFormModifiedDateTimePicker.Size = new System.Drawing.Size(85, 20);
@@ -156,7 +156,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(69, 35);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(240, 21);
+            this.comboBox1.Size = new System.Drawing.Size(254, 21);
             this.comboBox1.TabIndex = 12;
             // 
             // NoteForm

@@ -26,8 +26,6 @@ namespace NoteApp.View
         private void AddNoteButton_Click(object sender, EventArgs e)
         {
             var noteForm = new NoteForm();
-            //noteForm.ShowDialog();
-
             var result = noteForm.ShowDialog();
 
             if (result == DialogResult.OK)
@@ -38,6 +36,11 @@ namespace NoteApp.View
             {
                 MessageBox.Show("Заметка не будет сохранена!");
             }
+        }
+
+        private void addNoteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
