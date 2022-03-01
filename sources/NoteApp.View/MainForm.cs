@@ -17,18 +17,24 @@ namespace NoteApp.View
             InitializeComponent();
         }
 
-        private void label3_Click_1(object sender, EventArgs e)
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form aboutForm = new AboutForm();
-            aboutForm.Show();
-            this.Hide();
+            var noteForm = new NoteForm();
+            var result = noteForm.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                MessageBox.Show("Заметка сохранена");
+            }
+            else {
+                MessageBox.Show("Заметка не будет сохранена!");
+            }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void AddNoteButton_Click(object sender, EventArgs e)
         {
             Form noteForm = new NoteForm();
-            noteForm.Show();
-            this.Hide();
+            noteForm.ShowDialog();
         }
     }
 }

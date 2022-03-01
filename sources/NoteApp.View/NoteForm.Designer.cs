@@ -36,20 +36,20 @@
             this.NoteFormModifiedLabel = new System.Windows.Forms.Label();
             this.NoteFormModifiedDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.TitleTextBox = new System.Windows.Forms.TextBox();
-            this.NoteFormDomainUpDown = new System.Windows.Forms.DomainUpDown();
             this.NoteFormTextBox = new System.Windows.Forms.TextBox();
-            this.NoteFormScrollBar = new System.Windows.Forms.VScrollBar();
             this.OkButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // TitleLabel
             // 
             this.TitleLabel.AutoSize = true;
             this.TitleLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TitleLabel.Location = new System.Drawing.Point(12, 18);
+            this.TitleLabel.Location = new System.Drawing.Point(8, 14);
+            this.TitleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TitleLabel.Name = "TitleLabel";
-            this.TitleLabel.Size = new System.Drawing.Size(46, 23);
+            this.TitleLabel.Size = new System.Drawing.Size(34, 16);
             this.TitleLabel.TabIndex = 0;
             this.TitleLabel.Text = "Title:";
             // 
@@ -57,26 +57,29 @@
             // 
             this.CategoryLabel.AutoSize = true;
             this.CategoryLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CategoryLabel.Location = new System.Drawing.Point(12, 52);
+            this.CategoryLabel.Location = new System.Drawing.Point(8, 39);
+            this.CategoryLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CategoryLabel.Name = "CategoryLabel";
-            this.CategoryLabel.Size = new System.Drawing.Size(86, 23);
+            this.CategoryLabel.Size = new System.Drawing.Size(59, 16);
             this.CategoryLabel.TabIndex = 1;
             this.CategoryLabel.Text = "Category:";
             // 
             // NoteFormCreatedDateTimePicker
             // 
-            this.NoteFormCreatedDateTimePicker.Location = new System.Drawing.Point(104, 87);
+            this.NoteFormCreatedDateTimePicker.Location = new System.Drawing.Point(69, 61);
+            this.NoteFormCreatedDateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.NoteFormCreatedDateTimePicker.Name = "NoteFormCreatedDateTimePicker";
-            this.NoteFormCreatedDateTimePicker.Size = new System.Drawing.Size(125, 26);
+            this.NoteFormCreatedDateTimePicker.Size = new System.Drawing.Size(85, 20);
             this.NoteFormCreatedDateTimePicker.TabIndex = 2;
             // 
             // NoteFormCreatedLabel
             // 
             this.NoteFormCreatedLabel.AutoSize = true;
             this.NoteFormCreatedLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NoteFormCreatedLabel.Location = new System.Drawing.Point(12, 90);
+            this.NoteFormCreatedLabel.Location = new System.Drawing.Point(8, 66);
+            this.NoteFormCreatedLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NoteFormCreatedLabel.Name = "NoteFormCreatedLabel";
-            this.NoteFormCreatedLabel.Size = new System.Drawing.Size(75, 23);
+            this.NoteFormCreatedLabel.Size = new System.Drawing.Size(52, 16);
             this.NoteFormCreatedLabel.TabIndex = 3;
             this.NoteFormCreatedLabel.Text = "Created:";
             // 
@@ -84,64 +87,52 @@
             // 
             this.NoteFormModifiedLabel.AutoSize = true;
             this.NoteFormModifiedLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NoteFormModifiedLabel.Location = new System.Drawing.Point(244, 90);
+            this.NoteFormModifiedLabel.Location = new System.Drawing.Point(161, 65);
+            this.NoteFormModifiedLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.NoteFormModifiedLabel.Name = "NoteFormModifiedLabel";
-            this.NoteFormModifiedLabel.Size = new System.Drawing.Size(86, 23);
+            this.NoteFormModifiedLabel.Size = new System.Drawing.Size(59, 16);
             this.NoteFormModifiedLabel.TabIndex = 4;
             this.NoteFormModifiedLabel.Text = "Modified:";
             // 
             // NoteFormModifiedDateTimePicker
             // 
-            this.NoteFormModifiedDateTimePicker.Location = new System.Drawing.Point(336, 87);
+            this.NoteFormModifiedDateTimePicker.Location = new System.Drawing.Point(224, 61);
+            this.NoteFormModifiedDateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.NoteFormModifiedDateTimePicker.Name = "NoteFormModifiedDateTimePicker";
-            this.NoteFormModifiedDateTimePicker.Size = new System.Drawing.Size(126, 26);
+            this.NoteFormModifiedDateTimePicker.Size = new System.Drawing.Size(85, 20);
             this.NoteFormModifiedDateTimePicker.TabIndex = 5;
             // 
             // TitleTextBox
             // 
             this.TitleTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TitleTextBox.Location = new System.Drawing.Point(104, 16);
+            this.TitleTextBox.Location = new System.Drawing.Point(69, 10);
+            this.TitleTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TitleTextBox.Name = "TitleTextBox";
-            this.TitleTextBox.Size = new System.Drawing.Size(775, 26);
+            this.TitleTextBox.Size = new System.Drawing.Size(554, 20);
             this.TitleTextBox.TabIndex = 6;
-            // 
-            // NoteFormDomainUpDown
-            // 
-            this.NoteFormDomainUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.NoteFormDomainUpDown.Location = new System.Drawing.Point(104, 52);
-            this.NoteFormDomainUpDown.Name = "NoteFormDomainUpDown";
-            this.NoteFormDomainUpDown.Size = new System.Drawing.Size(194, 26);
-            this.NoteFormDomainUpDown.TabIndex = 7;
             // 
             // NoteFormTextBox
             // 
             this.NoteFormTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.NoteFormTextBox.Location = new System.Drawing.Point(16, 119);
+            this.NoteFormTextBox.Location = new System.Drawing.Point(11, 90);
+            this.NoteFormTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.NoteFormTextBox.Multiline = true;
             this.NoteFormTextBox.Name = "NoteFormTextBox";
-            this.NoteFormTextBox.Size = new System.Drawing.Size(863, 417);
+            this.NoteFormTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.NoteFormTextBox.Size = new System.Drawing.Size(612, 288);
             this.NoteFormTextBox.TabIndex = 8;
-            // 
-            // NoteFormScrollBar
-            // 
-            this.NoteFormScrollBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.NoteFormScrollBar.Location = new System.Drawing.Point(879, 119);
-            this.NoteFormScrollBar.Name = "NoteFormScrollBar";
-            this.NoteFormScrollBar.Size = new System.Drawing.Size(25, 420);
-            this.NoteFormScrollBar.TabIndex = 9;
             // 
             // OkButton
             // 
             this.OkButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.OkButton.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OkButton.Location = new System.Drawing.Point(648, 547);
+            this.OkButton.Location = new System.Drawing.Point(453, 386);
+            this.OkButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.OkButton.Name = "OkButton";
-            this.OkButton.Size = new System.Drawing.Size(125, 35);
+            this.OkButton.Size = new System.Drawing.Size(83, 23);
             this.OkButton.TabIndex = 10;
             this.OkButton.Text = "OK";
             this.OkButton.UseVisualStyleBackColor = true;
@@ -151,26 +142,34 @@
             // 
             this.CancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.CancelButton.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CancelButton.Location = new System.Drawing.Point(779, 547);
+            this.CancelButton.Location = new System.Drawing.Point(540, 386);
+            this.CancelButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(125, 35);
+            this.CancelButton.Size = new System.Drawing.Size(83, 23);
             this.CancelButton.TabIndex = 11;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(69, 35);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(240, 21);
+            this.comboBox1.TabIndex = 12;
+            // 
             // NoteForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(928, 594);
+            this.ClientSize = new System.Drawing.Size(634, 413);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.OkButton);
-            this.Controls.Add(this.NoteFormScrollBar);
             this.Controls.Add(this.NoteFormTextBox);
-            this.Controls.Add(this.NoteFormDomainUpDown);
             this.Controls.Add(this.TitleTextBox);
             this.Controls.Add(this.NoteFormModifiedDateTimePicker);
             this.Controls.Add(this.NoteFormModifiedLabel);
@@ -179,7 +178,8 @@
             this.Controls.Add(this.CategoryLabel);
             this.Controls.Add(this.TitleLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(950, 650);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MinimumSize = new System.Drawing.Size(650, 450);
             this.Name = "NoteForm";
             this.Text = "Add/Edit Note";
             this.ResumeLayout(false);
@@ -196,10 +196,9 @@
         private System.Windows.Forms.Label NoteFormModifiedLabel;
         private System.Windows.Forms.DateTimePicker NoteFormModifiedDateTimePicker;
         private System.Windows.Forms.TextBox TitleTextBox;
-        private System.Windows.Forms.DomainUpDown NoteFormDomainUpDown;
         private System.Windows.Forms.TextBox NoteFormTextBox;
-        private System.Windows.Forms.VScrollBar NoteFormScrollBar;
         private System.Windows.Forms.Button OkButton;
         private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

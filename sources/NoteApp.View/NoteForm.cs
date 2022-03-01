@@ -19,16 +19,12 @@ namespace NoteApp.View
 
         private void OkButton_Click(object sender, EventArgs e)
         {
-            Form mainForm = new MainForm();
-            mainForm.Show();
-            this.Close();
+            DialogResult = DialogResult.OK;
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
-            Form mainForm = new MainForm();
-            mainForm.Show();
-            this.Close();
+            DialogResult = DialogResult.Cancel;
         }
     }
 }

@@ -43,10 +43,10 @@
             // 
             this.NoteAppLabel.AutoSize = true;
             this.NoteAppLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NoteAppLabel.Location = new System.Drawing.Point(12, 29);
+            this.NoteAppLabel.Location = new System.Drawing.Point(15, 20);
             this.NoteAppLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NoteAppLabel.Name = "NoteAppLabel";
-            this.NoteAppLabel.Size = new System.Drawing.Size(194, 153);
+            this.NoteAppLabel.Size = new System.Drawing.Size(132, 102);
             this.NoteAppLabel.TabIndex = 0;
             this.NoteAppLabel.Text = "NoteApp\r\n\r\n\r\n";
             // 
@@ -54,10 +54,10 @@
             // 
             this.VersionLabel.AutoSize = true;
             this.VersionLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VersionLabel.Location = new System.Drawing.Point(18, 76);
+            this.VersionLabel.Location = new System.Drawing.Point(18, 51);
             this.VersionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.VersionLabel.Name = "VersionLabel";
-            this.VersionLabel.Size = new System.Drawing.Size(72, 25);
+            this.VersionLabel.Size = new System.Drawing.Size(52, 18);
             this.VersionLabel.TabIndex = 1;
             this.VersionLabel.Text = "v. 1.0.0";
             // 
@@ -65,10 +65,10 @@
             // 
             this.AuthorLabel.AutoSize = true;
             this.AuthorLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AuthorLabel.Location = new System.Drawing.Point(17, 143);
+            this.AuthorLabel.Location = new System.Drawing.Point(17, 101);
             this.AuthorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AuthorLabel.Name = "AuthorLabel";
-            this.AuthorLabel.Size = new System.Drawing.Size(326, 30);
+            this.AuthorLabel.Size = new System.Drawing.Size(215, 21);
             this.AuthorLabel.TabIndex = 2;
             this.AuthorLabel.Text = "Author: Nikita Martsenkovsky";
             // 
@@ -76,10 +76,10 @@
             // 
             this.EmailLabel.AutoSize = true;
             this.EmailLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailLabel.Location = new System.Drawing.Point(16, 220);
+            this.EmailLabel.Location = new System.Drawing.Point(17, 153);
             this.EmailLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.EmailLabel.Name = "EmailLabel";
-            this.EmailLabel.Size = new System.Drawing.Size(227, 30);
+            this.EmailLabel.Size = new System.Drawing.Size(147, 21);
             this.EmailLabel.TabIndex = 3;
             this.EmailLabel.Text = "e-mail for feedback:";
             // 
@@ -87,9 +87,9 @@
             // 
             this.GitHubLabel.AutoSize = true;
             this.GitHubLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GitHubLabel.Location = new System.Drawing.Point(17, 258);
+            this.GitHubLabel.Location = new System.Drawing.Point(17, 185);
             this.GitHubLabel.Name = "GitHubLabel";
-            this.GitHubLabel.Size = new System.Drawing.Size(93, 30);
+            this.GitHubLabel.Size = new System.Drawing.Size(62, 21);
             this.GitHubLabel.TabIndex = 5;
             this.GitHubLabel.Text = "GitHub:";
             // 
@@ -97,9 +97,9 @@
             // 
             this.GitHubLinkLabel.AutoSize = true;
             this.GitHubLinkLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GitHubLinkLabel.Location = new System.Drawing.Point(102, 258);
+            this.GitHubLinkLabel.Location = new System.Drawing.Point(171, 185);
             this.GitHubLinkLabel.Name = "GitHubLinkLabel";
-            this.GitHubLinkLabel.Size = new System.Drawing.Size(340, 30);
+            this.GitHubLinkLabel.Size = new System.Drawing.Size(221, 21);
             this.GitHubLinkLabel.TabIndex = 6;
             this.GitHubLinkLabel.TabStop = true;
             this.GitHubLinkLabel.Text = "github.com/bud-dha/NoteApp";
@@ -108,9 +108,9 @@
             // 
             this.DateLabel.AutoSize = true;
             this.DateLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateLabel.Location = new System.Drawing.Point(17, 410);
+            this.DateLabel.Location = new System.Drawing.Point(17, 281);
             this.DateLabel.Name = "DateLabel";
-            this.DateLabel.Size = new System.Drawing.Size(307, 30);
+            this.DateLabel.Size = new System.Drawing.Size(204, 21);
             this.DateLabel.TabIndex = 7;
             this.DateLabel.Text = "2022 Nikita Martsenkovsky ";
             // 
@@ -118,18 +118,18 @@
             // 
             this.EmailLinkLabel.AutoSize = true;
             this.EmailLinkLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailLinkLabel.Location = new System.Drawing.Point(237, 220);
+            this.EmailLinkLabel.Location = new System.Drawing.Point(171, 153);
             this.EmailLinkLabel.Name = "EmailLinkLabel";
-            this.EmailLinkLabel.Size = new System.Drawing.Size(318, 30);
+            this.EmailLinkLabel.Size = new System.Drawing.Size(211, 21);
             this.EmailLinkLabel.TabIndex = 8;
             this.EmailLinkLabel.TabStop = true;
             this.EmailLinkLabel.Text = "martsenkovskyn@gmail.com";
             // 
             // AboutForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(678, 444);
+            this.ClientSize = new System.Drawing.Size(484, 311);
             this.Controls.Add(this.EmailLinkLabel);
             this.Controls.Add(this.DateLabel);
             this.Controls.Add(this.GitHubLinkLabel);
@@ -142,9 +142,9 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(700, 500);
+            this.MaximumSize = new System.Drawing.Size(500, 350);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(700, 500);
+            this.MinimumSize = new System.Drawing.Size(500, 350);
             this.Name = "AboutForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
