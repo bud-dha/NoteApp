@@ -108,7 +108,10 @@
             // RemoveNoteButton
             // 
             this.RemoveNoteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.RemoveNoteButton.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.RemoveNoteButton.BackColor = System.Drawing.SystemColors.Control;
+            this.RemoveNoteButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.RemoveNoteButton.FlatAppearance.BorderSize = 0;
+            this.RemoveNoteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RemoveNoteButton.Image = ((System.Drawing.Image)(resources.GetObject("RemoveNoteButton.Image")));
             this.RemoveNoteButton.Location = new System.Drawing.Point(125, 496);
             this.RemoveNoteButton.MaximumSize = new System.Drawing.Size(50, 50);
@@ -121,7 +124,10 @@
             // EditNoteButton
             // 
             this.EditNoteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.EditNoteButton.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.EditNoteButton.BackColor = System.Drawing.SystemColors.Control;
+            this.EditNoteButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.EditNoteButton.FlatAppearance.BorderSize = 0;
+            this.EditNoteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditNoteButton.Image = ((System.Drawing.Image)(resources.GetObject("EditNoteButton.Image")));
             this.EditNoteButton.Location = new System.Drawing.Point(69, 496);
             this.EditNoteButton.MaximumSize = new System.Drawing.Size(50, 50);
@@ -134,7 +140,10 @@
             // AddNoteButton
             // 
             this.AddNoteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.AddNoteButton.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.AddNoteButton.BackColor = System.Drawing.SystemColors.Control;
+            this.AddNoteButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.AddNoteButton.FlatAppearance.BorderSize = 0;
+            this.AddNoteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddNoteButton.Image = ((System.Drawing.Image)(resources.GetObject("AddNoteButton.Image")));
             this.AddNoteButton.Location = new System.Drawing.Point(13, 496);
             this.AddNoteButton.MaximumSize = new System.Drawing.Size(50, 50);
