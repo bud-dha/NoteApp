@@ -11,6 +11,6 @@ namespace NoteApp.Model
         /// <list>
         /// Список заметок
         /// </list>
-        public List<Note> Notes = new List<Note>();
+        public List<Note> Notes { get; set; } = new List<Note>();
     }
 }
