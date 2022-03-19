@@ -14,7 +14,7 @@ namespace NoteApp.View
     public partial class MainForm : Form
     {
         /// <summary>
-        /// Поле _project для хранения объектов Project
+        /// Поле для хранения объектов Project
         /// </summary>
         private Project _project;
 

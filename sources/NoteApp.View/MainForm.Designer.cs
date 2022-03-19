@@ -63,7 +63,7 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 36);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 33);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -85,7 +85,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.MainFormCurentCategoryLable);
             this.splitContainer1.Panel2.Controls.Add(this.MainFormCategoryLabel);
             this.splitContainer1.Panel2.Controls.Add(this.HeadingLabel);
-            this.splitContainer1.Size = new System.Drawing.Size(1401, 750);
+            this.splitContainer1.Size = new System.Drawing.Size(1401, 753);
             this.splitContainer1.SplitterDistance = 460;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -108,7 +108,7 @@
             this.RemoveNoteButton.FlatAppearance.BorderSize = 0;
             this.RemoveNoteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RemoveNoteButton.Image = ((System.Drawing.Image)(resources.GetObject("RemoveNoteButton.Image")));
-            this.RemoveNoteButton.Location = new System.Drawing.Point(124, 686);
+            this.RemoveNoteButton.Location = new System.Drawing.Point(124, 689);
             this.RemoveNoteButton.MaximumSize = new System.Drawing.Size(50, 49);
             this.RemoveNoteButton.MinimumSize = new System.Drawing.Size(50, 49);
             this.RemoveNoteButton.Name = "RemoveNoteButton";
@@ -125,7 +125,7 @@
             this.EditNoteButton.FlatAppearance.BorderSize = 0;
             this.EditNoteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditNoteButton.Image = ((System.Drawing.Image)(resources.GetObject("EditNoteButton.Image")));
-            this.EditNoteButton.Location = new System.Drawing.Point(69, 686);
+            this.EditNoteButton.Location = new System.Drawing.Point(69, 689);
             this.EditNoteButton.MaximumSize = new System.Drawing.Size(50, 49);
             this.EditNoteButton.MinimumSize = new System.Drawing.Size(50, 49);
             this.EditNoteButton.Name = "EditNoteButton";
@@ -141,7 +141,7 @@
             this.AddNoteButton.FlatAppearance.BorderSize = 0;
             this.AddNoteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddNoteButton.Image = ((System.Drawing.Image)(resources.GetObject("AddNoteButton.Image")));
-            this.AddNoteButton.Location = new System.Drawing.Point(14, 686);
+            this.AddNoteButton.Location = new System.Drawing.Point(14, 689);
             this.AddNoteButton.MaximumSize = new System.Drawing.Size(50, 49);
             this.AddNoteButton.MinimumSize = new System.Drawing.Size(50, 49);
             this.AddNoteButton.Name = "AddNoteButton";
@@ -182,7 +182,7 @@
             this.MainFormTextBox.Multiline = true;
             this.MainFormTextBox.Name = "MainFormTextBox";
             this.MainFormTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.MainFormTextBox.Size = new System.Drawing.Size(914, 599);
+            this.MainFormTextBox.Size = new System.Drawing.Size(914, 602);
             this.MainFormTextBox.TabIndex = 7;
             // 
             // MainFormModifiedDateTimePicker
@@ -271,7 +271,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1401, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(1401, 33);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -280,13 +280,13 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 30);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 29);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(141, 34);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -297,27 +297,27 @@
             this.editNoteToolStripMenuItem,
             this.removeNoteToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(58, 30);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(58, 29);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // addNoteToolStripMenuItem
             // 
             this.addNoteToolStripMenuItem.Name = "addNoteToolStripMenuItem";
-            this.addNoteToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.addNoteToolStripMenuItem.Size = new System.Drawing.Size(222, 34);
             this.addNoteToolStripMenuItem.Text = "Add Note";
             this.addNoteToolStripMenuItem.Click += new System.EventHandler(this.addNoteToolStripMenuItem_Click);
             // 
             // editNoteToolStripMenuItem
             // 
             this.editNoteToolStripMenuItem.Name = "editNoteToolStripMenuItem";
-            this.editNoteToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.editNoteToolStripMenuItem.Size = new System.Drawing.Size(222, 34);
             this.editNoteToolStripMenuItem.Text = "Edit Note";
             this.editNoteToolStripMenuItem.Click += new System.EventHandler(this.editNoteToolStripMenuItem_Click);
             // 
             // removeNoteToolStripMenuItem
             // 
             this.removeNoteToolStripMenuItem.Name = "removeNoteToolStripMenuItem";
-            this.removeNoteToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.removeNoteToolStripMenuItem.Size = new System.Drawing.Size(222, 34);
             this.removeNoteToolStripMenuItem.Text = "Remove Note";
             this.removeNoteToolStripMenuItem.Click += new System.EventHandler(this.removeNoteToolStripMenuItem_Click);
             // 
@@ -326,13 +326,13 @@
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(65, 30);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(65, 29);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(164, 34);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
