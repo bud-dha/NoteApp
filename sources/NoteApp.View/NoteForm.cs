@@ -104,5 +104,10 @@ namespace NoteApp.View
         {
             DialogResult = DialogResult.Cancel;
         }
+
+        private void NoteFormTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
