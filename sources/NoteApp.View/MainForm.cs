@@ -173,16 +173,22 @@ namespace NoteApp.View
         /// </summary>
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Do you really want to close the program?", "", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
+            Close();
+        }
+
+        /// <summary>
+        /// Обработчик события закрытия программы
+        /// </summary>
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var result =  MessageBox.Show("Do you really want to close the program?", "" , MessageBoxButtons.YesNo);
+            if (result == DialogResult.No)
             {
-                Application.Exit();
+                e.Cancel = true;
             }
-            else
-            {
-                return;
+            else {
+                e.Cancel = false;
             }
-            
         }
     }
 }
