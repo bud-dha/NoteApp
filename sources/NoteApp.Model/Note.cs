@@ -29,12 +29,12 @@ namespace NoteApp.Model
         /// <summary>
         /// Время создания
         /// </summary>
-        private DateTime CreateDateTime = DateTime.Now;
+        public DateTime CreateDateTime { get; set; } = DateTime.Now;
 
         /// <summary>
         /// Время изменения 
         /// </summary>
-        private DateTime ModifiedDateTime;
+        public DateTime ModifiedDateTime { get; set; } = DateTime.Now;
 
         /// <summary>
         /// Геттер, сеттер для названия заметки

@@ -56,6 +56,7 @@ namespace NoteApp.View
         private void RemoveNote(int index)
         {
             _project.Notes.RemoveAt(index);
+            MainFormListBox.SetSelected(index, false);
         }
 
         /// <summary>
@@ -67,11 +68,15 @@ namespace NoteApp.View
             {
                 ClearSelectedNote();
             }
-            HeadingLabel.Text = _project.Notes.ToArray()[index].Title;
-            MainFormCurentCategoryLable.Text = _project.Notes.ToArray()[index].Category.ToString();
-            MainFormTextBox.Text = _project.Notes.ToArray()[index].Text;
+            else
+            {
+                HeadingLabel.Text = _project.Notes.ToArray()[index].Title;
+                MainFormCurentCategoryLable.Text = _project.Notes.ToArray()[index].Category.ToString();
+                MainFormTextBox.Text = _project.Notes.ToArray()[index].Text;
+                MainFormCreatedDateTimePicker.Text = _project.Notes.ToArray()[index].CreateDateTime.ToString();
+                MainFormModifiedDateTimePicker.Text = _project.Notes.ToArray()[index].ModifiedDateTime.ToString();
+            }
         }
-
         /// <summary>
         /// Метод очищающий правую панель
         /// </summary>
@@ -80,6 +85,8 @@ namespace NoteApp.View
             HeadingLabel.Text = "";
             MainFormCurentCategoryLable.Text = NoteCategory.Other.ToString();
             MainFormTextBox.Text = "";
+            MainFormCreatedDateTimePicker.Text = DateTime.Now.ToString();
+            MainFormModifiedDateTimePicker.Text = DateTime.Now.ToString();
         }
 
 
@@ -124,6 +131,7 @@ namespace NoteApp.View
 
             var result = MessageBox.Show("Do you realy want to remove " + 
                 _project.Notes.ToArray()[MainFormListBox.SelectedIndex].Title + "?", "", MessageBoxButtons.YesNo);
+            
             if (result == DialogResult.Yes)
             {
                 RemoveNote(MainFormListBox.SelectedIndex);
