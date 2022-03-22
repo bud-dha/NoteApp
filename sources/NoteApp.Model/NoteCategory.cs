@@ -13,7 +13,7 @@ namespace NoteApp.Model
     {
         Work, 
         Home,
-        HelthAndSports,
+        HealthAndSports,
         People,
         Documents,
         Finance,

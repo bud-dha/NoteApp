@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace NoteApp.Model
 {
+    /// <summary>
+    /// Хранит все пользовательские данные текущей сессии.
+    /// </summary>
     public class Project
     {
         /// <list>
