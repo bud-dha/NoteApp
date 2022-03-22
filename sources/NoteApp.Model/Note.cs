@@ -12,17 +12,17 @@ namespace NoteApp.Model
     public class Note : ICloneable
     {
         /// <summary>
-        /// Название по умолчанию.
+        /// Название заметки.
         /// </summary>
         private string _title = "Без названия";
 
         /// <summary>
-        /// Текст по умолчанию.
+        /// Текст заметки.
         /// </summary>
         private string _text = " ";
 
         /// <summary>
-        /// Категория по умолчанию.
+        /// Категория заметки.
         /// </summary>
         private NoteCategory _category = NoteCategory.Other;
 
@@ -35,6 +35,7 @@ namespace NoteApp.Model
         /// Время изменения. 
         /// </summary>
         private DateTime ModifiedDateTime { get; set; }
+
 
         /// <summary>
         /// Геттер, сеттер для названия заметки.
@@ -52,6 +53,7 @@ namespace NoteApp.Model
                 {
                     _title = "Без названия";
                 }
+
                 _title = value;
                 ModifiedDateTime = DateTime.Now;
             }
@@ -91,13 +93,14 @@ namespace NoteApp.Model
         /// <param name="category">Категория</param>
         public Note(string title, string text, NoteCategory category)
         {
-            _title = title;
-            _text = text;
-            _category = category;
+            Title = title;
+            Text = text;
+            Category = category;
         }
 
+
         /// <summary>
-        /// Кончтруктор по умолчанию.
+        /// Конcтруктор по умолчанию.
         /// </summary>
         public Note() { }
         
