@@ -9,8 +9,8 @@ namespace NoteApp.Model
     public class Project
     {
         /// <list>
-        /// Список заметок
+        /// Возвращает и задает список заметок пользователя.
         /// </list>
-        public List<Note> Notes = new List<Note>();
+        public List<Note> Notes { get; set; } = new List<Note>();
     }
 }
