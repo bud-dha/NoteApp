@@ -7,37 +7,37 @@ using System.Threading.Tasks;
 namespace NoteApp.Model 
 {
     /// <summary>
-    /// Класс заметок
+    /// Класс заметок.
     /// </summary>
     public class Note : ICloneable
     {
         /// <summary>
-        /// Название по умолчанию
+        /// Название по умолчанию.
         /// </summary>
         private string _title = "Без названия";
 
         /// <summary>
-        /// Текст по умолчанию
+        /// Текст по умолчанию.
         /// </summary>
         private string _text = " ";
 
         /// <summary>
-        /// Категория по умолчанию
+        /// Категория по умолчанию.
         /// </summary>
         private NoteCategory _category = NoteCategory.Other;
 
         /// <summary>
-        /// Время создания
+        /// Время создания.
         /// </summary>
         private DateTime CreateDateTime { get; set; } = DateTime.Now;
 
         /// <summary>
-        /// Время изменения 
+        /// Время изменения. 
         /// </summary>
         private DateTime ModifiedDateTime { get; set; }
 
         /// <summary>
-        /// Геттер, сеттер для названия заметки
+        /// Геттер, сеттер для названия заметки.
         /// </summary>
         public string Title
         {
@@ -58,7 +58,7 @@ namespace NoteApp.Model
         }
 
         /// <summary>
-        /// Геттер и сеттер для текста заметки
+        /// Геттер и сеттер для текста заметки.
         /// </summary>
         public string Text
         {
@@ -71,7 +71,7 @@ namespace NoteApp.Model
         }
 
       /// <summary>
-      /// Геттер и сеттер для категории
+      /// Геттер и сеттер для категории.
       /// </summary>
         public NoteCategory Category
         {
@@ -84,7 +84,7 @@ namespace NoteApp.Model
         }
 
         /// <summary>
-        /// Конструктор
+        /// Конструктор.
         /// </summary>
         /// <param name="title">Название</param>
         /// <param name="text">Текст</param>
@@ -97,12 +97,12 @@ namespace NoteApp.Model
         }
 
         /// <summary>
-        /// Кончтруктор по умолчанию
+        /// Кончтруктор по умолчанию.
         /// </summary>
         public Note() { }
         
         /// <summary>
-        /// ICloneable
+        /// ICloneable.
         /// </summary>
         /// <returns></returns>
         public object Clone()
