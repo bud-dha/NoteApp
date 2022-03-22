@@ -55,7 +55,7 @@ namespace NoteApp.View
                 TitleTextBox.BackColor = Color.White;
                 _titleError = "";
             }
-            catch(ArgumentException exception)
+            catch(Exception exception)
             {
                 TitleTextBox.BackColor = Color.LightPink;
                 _titleError = exception.Message;

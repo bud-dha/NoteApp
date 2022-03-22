@@ -91,13 +91,13 @@ namespace NoteApp.Model
         /// <param name="category">Категория</param>
         public Note(string title, string text, NoteCategory category)
         {
-            _title = title;
-            _text = text;
-            _category = category;
+            Title = title;
+            Text = text;
+            Category = category;
         }
 
         /// <summary>
-        /// Кончтруктор по умолчанию
+        /// Конструктор по умолчанию
         /// </summary>
         public Note() { }
         
