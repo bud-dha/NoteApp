@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace NoteApp.Model
 {
+    /// <summary>
+    /// Хранит все пользовательские данные текущей сессии.
+    /// </summary>
     public class Project
     {
         /// <list>
-        /// Список заметок
+        /// Возвращает и задает список заметок пользователя.
         /// </list>
         public List<Note> Notes { get; set; } = new List<Note>();
     }

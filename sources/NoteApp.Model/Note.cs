@@ -7,37 +7,38 @@ using System.Threading.Tasks;
 namespace NoteApp.Model 
 {
     /// <summary>
-    /// Класс заметок
+    /// Класс заметок.
     /// </summary>
     public class Note : ICloneable
     {
         /// <summary>
-        /// Название по умолчанию
+        /// Название заметки.
         /// </summary>
         private string _title = "Без названия";
 
         /// <summary>
-        /// Текст по умолчанию
+        /// Текст заметки.
         /// </summary>
         private string _text = " ";
 
         /// <summary>
-        /// Категория по умолчанию
+        /// Категория заметки.
         /// </summary>
         private NoteCategory _category = NoteCategory.Other;
 
         /// <summary>
-        /// Время создания
+        /// Возвращает время создания заметки.
         /// </summary>
-        public DateTime CreateDateTime { get; set; } = DateTime.Now;
+        public DateTime CreatedDateTime { get; private set; } = DateTime.Now;
 
         /// <summary>
-        /// Время изменения 
+        /// Возвращает время изменения заметки. 
         /// </summary>
-        public DateTime ModifiedDateTime { get; set; } = DateTime.Now;
+        public DateTime ModifiedDateTime { get; private set; }
+
 
         /// <summary>
-        /// Геттер, сеттер для названия заметки
+        /// Возвращает и задает категорию заметки.
         /// </summary>
         public string Title
         {
@@ -52,13 +53,14 @@ namespace NoteApp.Model
                 {
                     _title = "Без названия";
                 }
+
                 _title = value;
                 ModifiedDateTime = DateTime.Now;
             }
         }
 
         /// <summary>
-        /// Геттер и сеттер для текста заметки
+        /// Возвращает и задает текст заметки.
         /// </summary>
         public string Text
         {
@@ -70,9 +72,9 @@ namespace NoteApp.Model
             }
         }
 
-      /// <summary>
-      /// Геттер и сеттер для категории
-      /// </summary>
+        /// <summary>
+        /// Возвращает и задает категорию заметки.
+        /// </summary>
         public NoteCategory Category
         {
             get => _category;
@@ -84,25 +86,26 @@ namespace NoteApp.Model
         }
 
         /// <summary>
-        /// Конструктор
+        /// Создает экземпляр класса <see cref="Note">
         /// </summary>
         /// <param name="title">Название</param>
         /// <param name="text">Текст</param>
         /// <param name="category">Категория</param>
         public Note(string title, string text, NoteCategory category)
         {
-            _title = title;
-            _text = text;
-            _category = category;
+            Title = title;
+            Text = text;
+            Category = category;
         }
 
+
         /// <summary>
-        /// Кончтруктор по умолчанию
+        /// Создает экземпляр кдасса <see cref="Note">
         /// </summary>
         public Note() { }
         
         /// <summary>
-        /// ICloneable
+        /// Создает копию класса <see cref="Note">
         /// </summary>
         /// <returns></returns>
         public object Clone()
@@ -111,7 +114,7 @@ namespace NoteApp.Model
             note.Title = this.Title;
             note.Text = this.Text;
             note.Category = this.Category;
-            note.CreateDateTime = this.CreateDateTime;
+            note.CreatedDateTime = this.CreatedDateTime;
             note.ModifiedDateTime = this.ModifiedDateTime;
             
             return note;
