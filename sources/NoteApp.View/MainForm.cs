@@ -14,7 +14,7 @@ namespace NoteApp.View
     public partial class MainForm : Form
     {
         /// <summary>
-        /// Поле для хранения объектов Project
+        /// Объект класса Project.
         /// </summary>
         private Project _project;
 
@@ -28,7 +28,7 @@ namespace NoteApp.View
         }
 
         /// <summary>
-        /// Метод для очищения и добавления заметок в ListBox
+        /// Очищает и добовляет заметки в ListBox.
         /// </summary>
         private void UpdateListBox()
         {
@@ -41,7 +41,7 @@ namespace NoteApp.View
         }
 
         /// <summary>
-        /// Метод для генерации данных
+        /// Генерирует данные для заполнения Note/NoteForm.
         /// </summary>
         private void AddNote()
         {
@@ -50,16 +50,17 @@ namespace NoteApp.View
         }
 
         /// <summary>
-        /// Метод удаления заметки из списка
+        /// Удаляет выбранную заметку из списка.
         /// </summary>
         /// <param name="index">Индекс удаляемого из списка элемента</param>
         private void RemoveNote(int index)
         {
             _project.Notes.RemoveAt(index);
+            MainFormListBox.SetSelected(index, false);
         }
 
         /// <summary>
-        /// Метод заполняющий данный на правой панели главного окна
+        /// Заполняет данные на правой панели главного окна.
         /// </summary>
         private void UpdateSelectedNote(int index)
         {
@@ -67,24 +68,31 @@ namespace NoteApp.View
             {
                 ClearSelectedNote();
             }
-            HeadingLabel.Text = _project.Notes.ToArray()[index].Title;
-            MainFormCurentCategoryLable.Text = _project.Notes.ToArray()[index].Category.ToString();
-            MainFormTextBox.Text = _project.Notes.ToArray()[index].Text;
+            else
+            {
+                HeadingLabel.Text = _project.Notes.ToArray()[index].Title;
+                MainFormCurentCategoryLable.Text = _project.Notes.ToArray()[index].Category.ToString();
+                MainFormTextBox.Text = _project.Notes.ToArray()[index].Text;
+                MainFormCreatedDateTimePicker.Text = _project.Notes.ToArray()[index].CreatedDateTime.ToString();
+                MainFormModifiedDateTimePicker.Text = _project.Notes.ToArray()[index].ModifiedDateTime.ToString();
+            }
         }
 
         /// <summary>
-        /// Метод очищающий правую панель
+        /// Очищает данные с правой панели главного окна.
         /// </summary>
         private void ClearSelectedNote()
         {
             HeadingLabel.Text = "";
             MainFormCurentCategoryLable.Text = NoteCategory.Other.ToString();
             MainFormTextBox.Text = "";
+            MainFormCreatedDateTimePicker.Text = DateTime.Now.ToString();
+            MainFormModifiedDateTimePicker.Text = DateTime.Now.ToString();
         }
 
 
         /// <summary>
-        /// Кнопка добавления Заметки
+        /// Создает новую заметку.
         /// </summary>
         private void AddNoteButton_Click(object sender, EventArgs e)
         {
@@ -105,7 +113,7 @@ namespace NoteApp.View
         }
 
         /// <summary>
-        /// Кнопка добавления Заметки через меню
+        /// Создает новую заметку.
         /// </summary>
         private void addNoteToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -113,7 +121,7 @@ namespace NoteApp.View
         }
 
         /// <summary>
-        /// Кнопка удаления заметки
+        /// Удаляет заметку.
         /// </summary>
         private void RemoveNoteButton_Click(object sender, EventArgs e)
         {
@@ -124,6 +132,7 @@ namespace NoteApp.View
 
             var result = MessageBox.Show("Do you realy want to remove " + 
                 _project.Notes.ToArray()[MainFormListBox.SelectedIndex].Title + "?", "", MessageBoxButtons.YesNo);
+            
             if (result == DialogResult.Yes)
             {
                 RemoveNote(MainFormListBox.SelectedIndex);
@@ -137,22 +146,15 @@ namespace NoteApp.View
         }
 
         /// <summary>
-        /// Кнопка удаления Заметки через меню
+        /// Удаляет заметку.
         /// </summary>
         private void removeNoteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RemoveNoteButton_Click(sender, e);
         }
 
-
-        private void editNoteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
         /// <summary>
-        /// Обработчик клика по заметки
+        /// Обрабатывает клик по заметки.
         /// </summary>
         private void MainFormListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -160,7 +162,7 @@ namespace NoteApp.View
         }
 
         /// <summary>
-        /// Кнопка About
+        /// Вызывает AboutForm.
         /// </summary>
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -169,20 +171,26 @@ namespace NoteApp.View
         }
 
         /// <summary>
-        /// Кнопка выхода
+        /// Завершает работу приложения.
         /// </summary>
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Do you really want to close the program?", "", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
+            Close();
+        }
+
+        /// <summary>
+        /// Обрабатывает событие закрытия программы.
+        /// </summary>
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var result =  MessageBox.Show("Do you really want to close the program?", "" , MessageBoxButtons.YesNo);
+            if (result == DialogResult.No)
             {
-                Application.Exit();
+                e.Cancel = true;
             }
-            else
-            {
-                return;
+            else {
+                e.Cancel = false;
             }
-            
         }
     }
 }
