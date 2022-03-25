@@ -19,7 +19,7 @@ namespace NoteApp.Model
         /// <summary>
         /// Текст заметки.
         /// </summary>
-        private string _text = " ";
+        private string _text = "";
 
         /// <summary>
         /// Категория заметки.
