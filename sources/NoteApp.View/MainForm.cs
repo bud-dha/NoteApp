@@ -104,11 +104,11 @@ namespace NoteApp.View
 
             if (result == DialogResult.OK)
             {
-                MessageBox.Show("Заметка сохранена");
+                MessageBox.Show("Note saved");
             }
             else
             {
-                MessageBox.Show("Заметка не будет сохранена!");
+                MessageBox.Show("Note not be saved!");
             }
         }
 

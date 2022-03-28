@@ -64,7 +64,7 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 24);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -75,6 +75,7 @@
             this.splitContainer1.Panel1.Controls.Add(this.AddNoteButton);
             this.splitContainer1.Panel1.Controls.Add(this.MainFormListBox);
             this.splitContainer1.Panel1.Controls.Add(this.ShowCategoryLabel);
+            this.splitContainer1.Panel1MinSize = 200;
             // 
             // splitContainer1.Panel2
             // 
@@ -86,8 +87,9 @@
             this.splitContainer1.Panel2.Controls.Add(this.MainFormCurentCategoryLable);
             this.splitContainer1.Panel2.Controls.Add(this.MainFormCategoryLabel);
             this.splitContainer1.Panel2.Controls.Add(this.HeadingLabel);
+            this.splitContainer1.Panel2MinSize = 400;
             this.splitContainer1.Size = new System.Drawing.Size(856, 432);
-            this.splitContainer1.SplitterDistance = 281;
+            this.splitContainer1.SplitterDistance = 200;
             this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -98,7 +100,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(102, 12);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(169, 21);
+            this.comboBox1.Size = new System.Drawing.Size(88, 21);
             this.comboBox1.TabIndex = 12;
             // 
             // RemoveNoteButton
@@ -110,7 +112,7 @@
             this.RemoveNoteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RemoveNoteButton.Image = ((System.Drawing.Image)(resources.GetObject("RemoveNoteButton.Image")));
             this.RemoveNoteButton.Location = new System.Drawing.Point(83, 391);
-            this.RemoveNoteButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RemoveNoteButton.Margin = new System.Windows.Forms.Padding(2);
             this.RemoveNoteButton.MaximumSize = new System.Drawing.Size(33, 32);
             this.RemoveNoteButton.MinimumSize = new System.Drawing.Size(33, 32);
             this.RemoveNoteButton.Name = "RemoveNoteButton";
@@ -128,7 +130,7 @@
             this.EditNoteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditNoteButton.Image = ((System.Drawing.Image)(resources.GetObject("EditNoteButton.Image")));
             this.EditNoteButton.Location = new System.Drawing.Point(46, 391);
-            this.EditNoteButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EditNoteButton.Margin = new System.Windows.Forms.Padding(2);
             this.EditNoteButton.MaximumSize = new System.Drawing.Size(33, 32);
             this.EditNoteButton.MinimumSize = new System.Drawing.Size(33, 32);
             this.EditNoteButton.Name = "EditNoteButton";
@@ -145,7 +147,7 @@
             this.AddNoteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddNoteButton.Image = ((System.Drawing.Image)(resources.GetObject("AddNoteButton.Image")));
             this.AddNoteButton.Location = new System.Drawing.Point(9, 391);
-            this.AddNoteButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AddNoteButton.Margin = new System.Windows.Forms.Padding(2);
             this.AddNoteButton.MaximumSize = new System.Drawing.Size(33, 32);
             this.AddNoteButton.MinimumSize = new System.Drawing.Size(33, 32);
             this.AddNoteButton.Name = "AddNoteButton";
@@ -161,9 +163,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MainFormListBox.FormattingEnabled = true;
             this.MainFormListBox.Location = new System.Drawing.Point(9, 38);
-            this.MainFormListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MainFormListBox.Margin = new System.Windows.Forms.Padding(2);
             this.MainFormListBox.Name = "MainFormListBox";
-            this.MainFormListBox.Size = new System.Drawing.Size(262, 342);
+            this.MainFormListBox.Size = new System.Drawing.Size(181, 342);
             this.MainFormListBox.TabIndex = 8;
             this.MainFormListBox.SelectedIndexChanged += new System.EventHandler(this.MainFormListBox_SelectedIndexChanged);
             // 
@@ -184,11 +186,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MainFormTextBox.Location = new System.Drawing.Point(6, 87);
-            this.MainFormTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MainFormTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.MainFormTextBox.Multiline = true;
             this.MainFormTextBox.Name = "MainFormTextBox";
             this.MainFormTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.MainFormTextBox.Size = new System.Drawing.Size(558, 336);
+            this.MainFormTextBox.Size = new System.Drawing.Size(640, 336);
             this.MainFormTextBox.TabIndex = 7;
             // 
             // MainFormModifiedDateTimePicker
@@ -197,7 +199,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.MainFormModifiedDateTimePicker.CalendarFont = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainFormModifiedDateTimePicker.Location = new System.Drawing.Point(220, 63);
-            this.MainFormModifiedDateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MainFormModifiedDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.MainFormModifiedDateTimePicker.Name = "MainFormModifiedDateTimePicker";
             this.MainFormModifiedDateTimePicker.Size = new System.Drawing.Size(85, 20);
             this.MainFormModifiedDateTimePicker.TabIndex = 6;
@@ -208,7 +210,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.MainFormCreatedDateTimePicker.CalendarFont = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainFormCreatedDateTimePicker.Location = new System.Drawing.Point(59, 63);
-            this.MainFormCreatedDateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MainFormCreatedDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.MainFormCreatedDateTimePicker.Name = "MainFormCreatedDateTimePicker";
             this.MainFormCreatedDateTimePicker.Size = new System.Drawing.Size(85, 20);
             this.MainFormCreatedDateTimePicker.TabIndex = 5;
@@ -357,7 +359,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(857, 460);
             this.Name = "MainForm";
             this.Text = "NoteApp";

@@ -67,7 +67,7 @@
             // NoteFormCreatedDateTimePicker
             // 
             this.NoteFormCreatedDateTimePicker.Location = new System.Drawing.Point(69, 61);
-            this.NoteFormCreatedDateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NoteFormCreatedDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.NoteFormCreatedDateTimePicker.Name = "NoteFormCreatedDateTimePicker";
             this.NoteFormCreatedDateTimePicker.Size = new System.Drawing.Size(85, 20);
             this.NoteFormCreatedDateTimePicker.TabIndex = 2;
@@ -97,7 +97,7 @@
             // NoteFormModifiedDateTimePicker
             // 
             this.NoteFormModifiedDateTimePicker.Location = new System.Drawing.Point(238, 61);
-            this.NoteFormModifiedDateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NoteFormModifiedDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.NoteFormModifiedDateTimePicker.Name = "NoteFormModifiedDateTimePicker";
             this.NoteFormModifiedDateTimePicker.Size = new System.Drawing.Size(85, 20);
             this.NoteFormModifiedDateTimePicker.TabIndex = 5;
@@ -107,7 +107,7 @@
             this.TitleTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TitleTextBox.Location = new System.Drawing.Point(69, 10);
-            this.TitleTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TitleTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.TitleTextBox.Name = "TitleTextBox";
             this.TitleTextBox.Size = new System.Drawing.Size(776, 20);
             this.TitleTextBox.TabIndex = 6;
@@ -119,20 +119,19 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.NoteFormTextBox.Location = new System.Drawing.Point(11, 85);
-            this.NoteFormTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NoteFormTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.NoteFormTextBox.Multiline = true;
             this.NoteFormTextBox.Name = "NoteFormTextBox";
             this.NoteFormTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.NoteFormTextBox.Size = new System.Drawing.Size(834, 333);
             this.NoteFormTextBox.TabIndex = 8;
-            this.NoteFormTextBox.TextChanged += new System.EventHandler(this.NoteFormTextBox_TextChanged);
             // 
             // OkButton
             // 
             this.OkButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.OkButton.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OkButton.Location = new System.Drawing.Point(675, 425);
-            this.OkButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.OkButton.Margin = new System.Windows.Forms.Padding(2);
             this.OkButton.Name = "OkButton";
             this.OkButton.Size = new System.Drawing.Size(83, 23);
             this.OkButton.TabIndex = 10;
@@ -145,7 +144,7 @@
             this.CancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.CancelButton.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CancelButton.Location = new System.Drawing.Point(762, 425);
-            this.CancelButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CancelButton.Margin = new System.Windows.Forms.Padding(2);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(83, 23);
             this.CancelButton.TabIndex = 11;
@@ -178,7 +177,7 @@
             this.Controls.Add(this.CategoryLabel);
             this.Controls.Add(this.TitleLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(857, 460);
             this.Name = "NoteForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
