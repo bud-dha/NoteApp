@@ -23,6 +23,10 @@ namespace NoteApp.View
         /// </summary>
         private string _titleError;
 
+        private readonly Color _correctValueColor = Color.LightPink;
+
+        private readonly Color _wrongValueColor = Color.White;
+
         public NoteForm()
         {
             InitializeComponent();
@@ -42,7 +46,7 @@ namespace NoteApp.View
         private void UpdateForm()
         {
             TitleTextBox.Text = _note.Title;
-            NoteFormComboBox.Text = _note.Category.ToString();
+            NoteFormComboBox.SelectedItem = _note.Category;
             NoteFormTextBox.Text = _note.Text;
         }
 
@@ -65,7 +69,7 @@ namespace NoteApp.View
         private void UpdateNote()
         {
             _note.Title = TitleTextBox.Text;
-            //_note.Category = NoteFormComboBox;
+            _note.Category = (NoteCategory)NoteFormComboBox.SelectedItem;
             _note.Text = NoteFormTextBox.Text;
         }
 
@@ -78,14 +82,12 @@ namespace NoteApp.View
             try
             {
                 _note.Title = TitleTextBox.Text;
-                TitleTextBox.BackColor = Color.White;
-
+                TitleTextBox.BackColor = _correctValueColor;
                 _titleError = "";
             }
             catch (Exception exception)
             {
-                TitleTextBox.BackColor = Color.LightPink;
-
+                TitleTextBox.BackColor = _wrongValueColor;
                 _titleError = exception.Message;
             }
         }
