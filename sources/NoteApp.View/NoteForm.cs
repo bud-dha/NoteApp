@@ -23,9 +23,9 @@ namespace NoteApp.View
         /// </summary>
         private string _titleError;
 
-        private readonly Color _correctValueColor = Color.LightPink;
+        private readonly Color _wrongValueColor = Color.LightPink;
 
-        private readonly Color _wrongValueColor = Color.White;
+        private readonly Color _correctValueColor = Color.White;
 
         public NoteForm()
         {
