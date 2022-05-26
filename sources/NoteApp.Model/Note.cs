@@ -34,7 +34,7 @@ namespace NoteApp.Model
         /// <summary>
         /// Возвращает время изменения заметки. 
         /// </summary>
-        public DateTime ModifiedDateTime { get; private set; }
+        public DateTime ModifiedDateTime { get; private set; } = DateTime.Now;
 
 
         /// <summary>

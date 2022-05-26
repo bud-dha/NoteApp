@@ -24,11 +24,10 @@ namespace NoteApp.View
 
             _project = new Project();
             _project.Notes = new List<Note>();
-
         }
 
         /// <summary>
-        /// Очищает и добовляет заметки в ListBox.
+        /// Очищает и добавляет заметки в ListBox.
         /// </summary>
         private void UpdateListBox()
         {
@@ -39,16 +38,6 @@ namespace NoteApp.View
                 MainFormListBox.Items.Insert(i, _project.Notes.ToArray()[i].Title);
             }
         }
-
-        /// <summary>
-        /// Генерирует данные для заполнения Note/NoteForm.
-        /// </summary>
-        private void AddNote()
-        {
-            Note note = new Note("1st", "text", NoteCategory.Finance);
-            _project.Notes.Add(note);
-        }
-
         /// <summary>
         /// Удаляет выбранную заметку из списка.
         /// </summary>
@@ -58,7 +47,6 @@ namespace NoteApp.View
             _project.Notes.RemoveAt(index);
             MainFormListBox.SetSelected(index, false);
         }
-
         /// <summary>
         /// Заполняет данные на правой панели главного окна.
         /// </summary>
@@ -77,7 +65,6 @@ namespace NoteApp.View
                 MainFormModifiedDateTimePicker.Text = _project.Notes.ToArray()[index].ModifiedDateTime.ToString();
             }
         }
-
         /// <summary>
         /// Очищает данные с правой панели главного окна.
         /// </summary>
@@ -90,28 +77,21 @@ namespace NoteApp.View
             MainFormModifiedDateTimePicker.Text = DateTime.Now.ToString();
         }
 
-
         /// <summary>
         /// Создает новую заметку.
         /// </summary>
         private void AddNoteButton_Click(object sender, EventArgs e)
-        {
-            AddNote();
-            UpdateListBox();
-
-            var noteForm = new NoteForm();
+        {            
+            var noteForm = new NoteForm(null);
             var result = noteForm.ShowDialog();
+            if (result == DialogResult.OK && noteForm.Note != null)
+            {
+                _project.Notes.Add(noteForm.Note);
+            }
 
-            if (result == DialogResult.OK)
-            {
-                MessageBox.Show("Note saved");
-            }
-            else
-            {
-                MessageBox.Show("Note not be saved!");
-            }
+            DialogResultMessage(result);
+            UpdateListBox();
         }
-
         /// <summary>
         /// Создает новую заметку.
         /// </summary>
@@ -119,7 +99,33 @@ namespace NoteApp.View
         {
             AddNoteButton_Click(sender, e);
         }
+        /// <summary>
+        /// Редактирует заметку.
+        /// </summary>
+        private void EditNoteButton_Click(object sender, EventArgs e)
+        {
+            var selectedIndex = MainFormListBox.SelectedIndex;
+            var selectedItem = _project.Notes[selectedIndex];
+            var noteForm = new NoteForm(selectedItem);
+            var result = noteForm.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                var updatedData = noteForm.Note;
 
+                MainFormListBox.Items.RemoveAt(selectedIndex);
+                _project.Notes.RemoveAt(selectedIndex);
+                _project.Notes.Insert(selectedIndex, updatedData);
+            }
+            DialogResultMessage(result);
+            UpdateListBox();
+        }
+        /// <summary>
+        /// Редактирует заметку.
+        /// </summary>
+        private void editNoteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditNoteButton_Click(sender, e);
+        }
         /// <summary>
         /// Удаляет заметку.
         /// </summary>
@@ -144,7 +150,6 @@ namespace NoteApp.View
 
             UpdateListBox();
         }
-
         /// <summary>
         /// Удаляет заметку.
         /// </summary>
@@ -190,6 +195,40 @@ namespace NoteApp.View
             }
             else {
                 e.Cancel = false;
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MainFormComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MainFormComboBox_Click(object sender, EventArgs e)
+        {
+            MainFormComboBox.DataSource = Enum.GetValues(typeof(NoteCategory));
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void DialogResultMessage(DialogResult result)
+        {
+            if (result == DialogResult.OK)
+            {
+                MessageBox.Show("Note saved");
+            }
+            else
+            {
+                MessageBox.Show("Note not be saved!");
             }
         }
     }
