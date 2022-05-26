@@ -14,42 +14,56 @@ namespace NoteApp.View
     public partial class NoteForm : Form
     {
         /// <summary>
-        /// Объект класса Note.
+        /// Свойство для передачи новой заметки.
         /// </summary>
-        private Note _note;
-
+        public Note Note { get; set; }
         /// <summary>
         /// Сообщение об ошибке.
         /// </summary>
         private string _titleError;
-
+        /// <summary>
+        /// Цвет некоректного ввода.
+        /// </summary>
         private readonly Color _wrongValueColor = Color.LightPink;
-
+        /// <summary>
+        /// Цвет коректного ввода.
+        /// </summary>
         private readonly Color _correctValueColor = Color.White;
 
-        public NoteForm()
+        public NoteForm(Note note)
         {
             InitializeComponent();
 
             NoteFormComboBox.DataSource = Enum.GetValues(typeof(NoteCategory));
 
-            _note = new Note();
-            _note.Title = "HBG";
-            _note.Text = "djvndc ndnc dscdjnc";
+            if (note == null)
+            {
+                note = new Note();
+            }
+
+            Note = note;
 
             UpdateForm();
         }
 
         /// <summary>
-        /// Заполняет поля формы данными из плоля _note.
+        /// Заполняет поля формы данными из полей Note.
         /// </summary>
         private void UpdateForm()
         {
-            TitleTextBox.Text = _note.Title;
-            NoteFormComboBox.SelectedItem = _note.Category;
-            NoteFormTextBox.Text = _note.Text;
+            TitleTextBox.Text = Note.Title;
+            NoteFormComboBox.SelectedItem = Note.Category;
+            NoteFormTextBox.Text = Note.Text;
         }
-
+        /// <summary>
+        /// Заполняет поля Note данными из полей формы.
+        /// </summary>
+        private void UpdateNote()
+        {
+            Note.Title = TitleTextBox.Text;
+            Note.Category = (NoteCategory)NoteFormComboBox.SelectedItem;
+            Note.Text = NoteFormTextBox.Text;
+        }
         /// <summary>
         /// Проверяет форму на наличие ошибок.
         /// </summary>
@@ -64,24 +78,13 @@ namespace NoteApp.View
         }
 
         /// <summary>
-        /// Обновляет данные в объекте _note.
-        /// </summary>
-        private void UpdateNote()
-        {
-            _note.Title = TitleTextBox.Text;
-            _note.Category = (NoteCategory)NoteFormComboBox.SelectedItem;
-            _note.Text = NoteFormTextBox.Text;
-        }
-
-
-        /// <summary>
         /// Обрабатывет изменения в текстовом поле.
         /// </summary>
         private void TitleTextBox_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                _note.Title = TitleTextBox.Text;
+                Note.Title = TitleTextBox.Text;
                 TitleTextBox.BackColor = _correctValueColor;
                 _titleError = "";
             }
@@ -91,17 +94,15 @@ namespace NoteApp.View
                 _titleError = exception.Message;
             }
         }
-
         /// <summary>
         /// Обрабатывает клик по кнопке ОК.
         /// </summary>
         private void OkButton_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
             CheckFormOnErrors();
             UpdateNote();
+            DialogResult = DialogResult.OK;
         }
-
         /// <summary>
         /// Обрабатывает клик по кнопке Cancel.
         /// </summary>
