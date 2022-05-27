@@ -24,6 +24,11 @@ namespace NoteApp.View
 
             _project = new Project();
             _project.Notes = new List<Note>();
+
+            if (_project.Notes.Count != 0)
+            {
+                MainFormListBox.SelectedItem = _project.CurrentNote;
+            }
         }
 
         /// <summary>
@@ -32,6 +37,10 @@ namespace NoteApp.View
         private void UpdateListBox()
         {
             MainFormListBox.Items.Clear();
+
+            _project.Notes = _project.NotesByDate();
+            _project.Notes.Reverse();
+            _project.Notes = CheckCategory(_project.Notes);
 
             for (int i = 0; i < _project.Notes.Count; i++)
             {
@@ -157,15 +166,13 @@ namespace NoteApp.View
         {
             RemoveNoteButton_Click(sender, e);
         }
-
         /// <summary>
         /// Обрабатывает клик по заметки.
         /// </summary>
         private void MainFormListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        {                            
             UpdateSelectedNote(MainFormListBox.SelectedIndex);
         }
-
         /// <summary>
         /// Вызывает AboutForm.
         /// </summary>
@@ -174,7 +181,6 @@ namespace NoteApp.View
             Form aboutForm = new AboutForm();
             aboutForm.Show();
         }
-
         /// <summary>
         /// Завершает работу приложения.
         /// </summary>
@@ -182,7 +188,6 @@ namespace NoteApp.View
         {
             Close();
         }
-
         /// <summary>
         /// Обрабатывает событие закрытия программы.
         /// </summary>
@@ -197,28 +202,25 @@ namespace NoteApp.View
                 e.Cancel = false;
             }
         }
-
         /// <summary>
-        /// 
+        /// Возвращает список заметок по категории.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void MainFormComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
+            UpdateListBox();
         }
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void MainFormComboBox_Click(object sender, EventArgs e)
         {
             MainFormComboBox.DataSource = Enum.GetValues(typeof(NoteCategory));
         }
-
         /// <summary>
-        /// 
+        /// Возвращает текстовое сообщение.
         /// </summary>
         private void DialogResultMessage(DialogResult result)
         {
@@ -231,5 +233,37 @@ namespace NoteApp.View
                 MessageBox.Show("Note not be saved!");
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        private List<Note> CheckCategory(List<Note> Notes)
+        {
+            switch (MainFormComboBox.SelectedIndex)
+            {
+                case 0:
+                   Notes = _project.NotesByCategory(NoteCategory.Work);
+                   return Notes;
+                case 1:
+                    Notes = _project.NotesByCategory(NoteCategory.Home);
+                    return Notes;
+                case 2:
+                    Notes = _project.NotesByCategory(NoteCategory.HealthAndSports);
+                    return Notes;
+                case 3:
+                    Notes = _project.NotesByCategory(NoteCategory.People);
+                    return Notes;
+                case 4:
+                    Notes = _project.NotesByCategory(NoteCategory.Documents);
+                    return Notes;
+                case 5:
+                    Notes = _project.NotesByCategory(NoteCategory.Finance);
+                    return Notes;
+                case 6:
+                    Notes = _project.NotesByCategory(NoteCategory.Other);
+                    return Notes;
+            }
+            return Notes;
+        }
+
     }
 }

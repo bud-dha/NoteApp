@@ -19,7 +19,6 @@ namespace NoteApp.Model
         /// Текущая заметка.
         /// </summary>
         public Note CurrentNote { get; set; }
-
         /// <summary>
         /// Возвращает список заметок отсортированных по дате редактирования.
         /// </summary>
@@ -27,7 +26,7 @@ namespace NoteApp.Model
         {
             if (Notes.Count != 0)
             {
-                Notes.OrderBy(t => t.ModifiedDateTime);
+                return Notes.OrderBy(t => t.ModifiedDateTime).ToList();
             }
             return Notes;
         }
@@ -38,7 +37,7 @@ namespace NoteApp.Model
         {
             if (Notes.Count != 0)
             {
-                Notes.Where(t => t.Category == category);
+              return Notes.Where(t => t.Category == category).ToList();
             }
             return Notes;
         }
