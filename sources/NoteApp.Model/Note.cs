@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace NoteApp.Model 
 {
     /// <summary>
-    /// Класс заметок.
+    /// Хранит данные заметки.
     /// </summary>
     public class Note : ICloneable
     {

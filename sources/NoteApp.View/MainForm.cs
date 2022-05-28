@@ -20,10 +20,10 @@ namespace NoteApp.View
 
         public MainForm()
         {
-            InitializeComponent();
-
-            _project = new Project();
+            _project = ProjectSerializer.LoadFromFile();
             _project.Notes = new List<Note>();
+
+            InitializeComponent();            
 
             if (_project.Notes.Count != 0)
             {
@@ -94,8 +94,9 @@ namespace NoteApp.View
             var noteForm = new NoteForm(null);
             var result = noteForm.ShowDialog();
             if (result == DialogResult.OK && noteForm.Note != null)
-            {
+            {                
                 _project.Notes.Add(noteForm.Note);
+                ProjectSerializer.SaveToFile(_project);
             }
 
             DialogResultMessage(result);
@@ -124,6 +125,7 @@ namespace NoteApp.View
                 MainFormListBox.Items.RemoveAt(selectedIndex);
                 _project.Notes.RemoveAt(selectedIndex);
                 _project.Notes.Insert(selectedIndex, updatedData);
+                ProjectSerializer.SaveToFile(_project);
             }
             DialogResultMessage(result);
             UpdateListBox();
@@ -151,6 +153,7 @@ namespace NoteApp.View
             if (result == DialogResult.Yes)
             {
                 RemoveNote(MainFormListBox.SelectedIndex);
+                ProjectSerializer.SaveToFile(_project);
             }
             else if(result == DialogResult.No)
             {
@@ -186,6 +189,7 @@ namespace NoteApp.View
         /// </summary>
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            ProjectSerializer.SaveToFile(_project);
             Close();
         }
         /// <summary>
@@ -199,6 +203,7 @@ namespace NoteApp.View
                 e.Cancel = true;
             }
             else {
+                ProjectSerializer.SaveToFile(_project);
                 e.Cancel = false;
             }
         }
@@ -209,7 +214,6 @@ namespace NoteApp.View
         /// <param name="e"></param>
         private void MainFormComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             UpdateListBox();
         }
         /// <summary>
