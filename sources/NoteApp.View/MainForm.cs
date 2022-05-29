@@ -23,7 +23,17 @@ namespace NoteApp.View
             _project = ProjectSerializer.LoadFromFile();
             _project.Notes = new List<Note>();
 
-            InitializeComponent();            
+            InitializeComponent();
+
+            foreach (var category in Enum.GetValues(typeof(NoteCategory)))
+            {
+                MainFormComboBox.Items.Add(category);
+            }
+
+            MainFormComboBox.Items.Add("All");
+            MainFormComboBox.SelectedItem = "All";
+
+            UpdateListBox();
 
             if (_project.Notes.Count != 0)
             {
@@ -114,20 +124,28 @@ namespace NoteApp.View
         /// </summary>
         private void EditNoteButton_Click(object sender, EventArgs e)
         {
-            var selectedIndex = MainFormListBox.SelectedIndex;
-            var selectedItem = _project.Notes[selectedIndex];
-            var noteForm = new NoteForm(selectedItem);
-            var result = noteForm.ShowDialog();
-            if (result == DialogResult.OK)
+            try
             {
-                var updatedData = noteForm.Note;
+                var selectedIndex = MainFormListBox.SelectedIndex;
+                var selectedItem = _project.Notes[selectedIndex];
+                var noteForm = new NoteForm(selectedItem);
+                var result = noteForm.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    var updatedData = noteForm.Note;
 
-                MainFormListBox.Items.RemoveAt(selectedIndex);
-                _project.Notes.RemoveAt(selectedIndex);
-                _project.Notes.Insert(selectedIndex, updatedData);
-                ProjectSerializer.SaveToFile(_project);
+                    MainFormListBox.Items.RemoveAt(selectedIndex);
+                    _project.Notes.RemoveAt(selectedIndex);
+                    _project.Notes.Insert(selectedIndex, updatedData);
+                    ProjectSerializer.SaveToFile(_project);
+                }
+                DialogResultMessage(result);
             }
-            DialogResultMessage(result);
+            catch
+            {
+                MessageBox.Show("Необходимо выбрать заметку!");
+            }
+
             UpdateListBox();
         }
         /// <summary>
@@ -147,8 +165,8 @@ namespace NoteApp.View
                 return;
             }
 
-            var result = MessageBox.Show("Do you realy want to remove " + 
-                _project.Notes.ToArray()[MainFormListBox.SelectedIndex].Title + "?", "", MessageBoxButtons.YesNo);
+            var result = MessageBox.Show("Вы действительно хотите удалить '" + 
+                _project.Notes.ToArray()[MainFormListBox.SelectedIndex].Title + "'?", "", MessageBoxButtons.YesNo);
             
             if (result == DialogResult.Yes)
             {
@@ -197,7 +215,7 @@ namespace NoteApp.View
         /// </summary>
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            var result =  MessageBox.Show("Do you really want to close the program?", "" , MessageBoxButtons.YesNo);
+            var result =  MessageBox.Show("Вы действительно хотите закрыть программу?", "" , MessageBoxButtons.YesNo);
             if (result == DialogResult.No)
             {
                 e.Cancel = true;
@@ -210,18 +228,9 @@ namespace NoteApp.View
         /// <summary>
         /// Возвращает список заметок по категории.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void MainFormComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateListBox();
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        private void MainFormComboBox_Click(object sender, EventArgs e)
-        {
-            MainFormComboBox.DataSource = Enum.GetValues(typeof(NoteCategory));
         }
         /// <summary>
         /// Возвращает текстовое сообщение.
@@ -230,11 +239,11 @@ namespace NoteApp.View
         {
             if (result == DialogResult.OK)
             {
-                MessageBox.Show("Note saved");
+                MessageBox.Show("Заметка сохранена");
             }
             else
             {
-                MessageBox.Show("Note not be saved!");
+                MessageBox.Show("Заметка не будет сохранена!");
             }
         }
         /// <summary>

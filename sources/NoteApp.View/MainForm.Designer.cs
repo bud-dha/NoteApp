@@ -104,7 +104,6 @@
             this.MainFormComboBox.TabIndex = 12;
             this.MainFormComboBox.Text = "All";
             this.MainFormComboBox.SelectedIndexChanged += new System.EventHandler(this.MainFormComboBox_SelectedIndexChanged);
-            this.MainFormComboBox.Click += new System.EventHandler(this.MainFormComboBox_Click);
             // 
             // RemoveNoteButton
             // 
@@ -195,7 +194,7 @@
             this.MainFormTextBox.Name = "MainFormTextBox";
             this.MainFormTextBox.ReadOnly = true;
             this.MainFormTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.MainFormTextBox.Size = new System.Drawing.Size(559, 336);
+            this.MainFormTextBox.Size = new System.Drawing.Size(560, 336);
             this.MainFormTextBox.TabIndex = 7;
             // 
             // MainFormModifiedDateTimePicker
@@ -336,7 +335,7 @@
             // editNoteToolStripMenuItem
             // 
             this.editNoteToolStripMenuItem.Name = "editNoteToolStripMenuItem";
-            this.editNoteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editNoteToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.editNoteToolStripMenuItem.Text = "Edit Note";
             this.editNoteToolStripMenuItem.Click += new System.EventHandler(this.editNoteToolStripMenuItem_Click);
             // 
