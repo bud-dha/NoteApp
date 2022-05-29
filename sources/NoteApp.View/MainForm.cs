@@ -36,6 +36,14 @@ namespace NoteApp.View
         /// </summary>
         private void UpdateListBox()
         {
+            if (_project.Notes.Count == 0)
+            {
+                ClearSelectedNote();
+                MainFormListBox.Items.Clear();
+                _project.CurrentNote = null;
+                return;
+            }
+
             MainFormListBox.Items.Clear();
 
             _project.Notes = _project.NotesByDate();
@@ -205,11 +213,8 @@ namespace NoteApp.View
         /// <summary>
         /// Возвращает список заметок по категории.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void MainFormComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             UpdateListBox();
         }
         /// <summary>
@@ -234,7 +239,7 @@ namespace NoteApp.View
             }
         }
         /// <summary>
-        /// 
+        /// Возвращает список заметок по выбранной категории.
         /// </summary>
         private List<Note> CheckCategory(List<Note> Notes)
         {
