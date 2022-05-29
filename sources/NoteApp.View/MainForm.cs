@@ -23,7 +23,17 @@ namespace NoteApp.View
             InitializeComponent();
 
             _project = new Project();
-            _project.Notes = new List<Note>();
+            _project.Notes = new List<Note>();                     
+
+            foreach (var category in Enum.GetValues(typeof(NoteCategory)))
+            {
+                MainFormComboBox.Items.Add(category);
+            }
+
+            MainFormComboBox.Items.Add("All");
+            MainFormComboBox.SelectedItem = "All";
+
+            UpdateListBox();
 
             if (_project.Notes.Count != 0)
             {
@@ -47,8 +57,7 @@ namespace NoteApp.View
             MainFormListBox.Items.Clear();
 
             _project.Notes = _project.NotesByDate();
-            _project.Notes.Reverse();
-            _project.Notes = CheckCategory(_project.Notes);
+            _project.Notes.Reverse();            
 
             for (int i = 0; i < _project.Notes.Count; i++)
             {
@@ -218,13 +227,6 @@ namespace NoteApp.View
             UpdateListBox();
         }
         /// <summary>
-        /// 
-        /// </summary>
-        private void MainFormComboBox_Click(object sender, EventArgs e)
-        {
-            MainFormComboBox.DataSource = Enum.GetValues(typeof(NoteCategory));
-        }
-        /// <summary>
         /// Возвращает текстовое сообщение.
         /// </summary>
         private void DialogResultMessage(DialogResult result)
@@ -265,6 +267,8 @@ namespace NoteApp.View
                     return Notes;
                 case 6:
                     Notes = _project.NotesByCategory(NoteCategory.Other);
+                    return Notes;
+                case 7:
                     return Notes;
             }
             return Notes;
