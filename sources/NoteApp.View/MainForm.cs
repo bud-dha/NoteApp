@@ -35,11 +35,6 @@ namespace NoteApp.View
             MainFormComboBox.SelectedItem = "All";
 
             UpdateListBox();
-
-            if (_project.Notes.Count != 0)
-            {
-                MainFormListBox.SelectedItem = _project.CurrentNote;
-            }
         }
 
         /// <summary>
@@ -50,8 +45,7 @@ namespace NoteApp.View
             if (_project.Notes.Count == 0)
             {
                 ClearSelectedNote();
-                MainFormListBox.Items.Clear();
-                _project.CurrentNote = null;
+                MainFormListBox.Items.Clear();                
                 return;
             }
 
@@ -59,7 +53,7 @@ namespace NoteApp.View
 
             _project.Notes = _project.NotesByDate();
             _project.Notes.Reverse();
-            _project.NotesByCat = CheckCategory(_project.Notes);
+            _project.NotesByCat = CheckCategory(_project.Notes);            
 
             for (int i = 0; i < _project.NotesByCat.Count; i++)
             {
@@ -86,11 +80,11 @@ namespace NoteApp.View
             }
             else
             {
-                HeadingLabel.Text = _project.Notes.ToArray()[index].Title;
-                MainFormCurentCategoryLable.Text = _project.Notes.ToArray()[index].Category.ToString();
-                MainFormTextBox.Text = _project.Notes.ToArray()[index].Text;
-                MainFormCreatedDateTimePicker.Text = _project.Notes.ToArray()[index].CreatedDateTime.ToString();
-                MainFormModifiedDateTimePicker.Text = _project.Notes.ToArray()[index].ModifiedDateTime.ToString();
+                HeadingLabel.Text = _project.NotesByCat.ToArray()[index].Title;
+                MainFormCurentCategoryLable.Text = _project.NotesByCat.ToArray()[index].Category.ToString();
+                MainFormTextBox.Text = _project.NotesByCat.ToArray()[index].Text;
+                MainFormCreatedDateTimePicker.Text = _project.NotesByCat.ToArray()[index].CreatedDateTime.ToString();
+                MainFormModifiedDateTimePicker.Text = _project.NotesByCat.ToArray()[index].ModifiedDateTime.ToString();
             }
         }
         /// <summary>

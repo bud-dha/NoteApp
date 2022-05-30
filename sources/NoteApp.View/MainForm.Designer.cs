@@ -103,8 +103,7 @@
             this.MainFormComboBox.Size = new System.Drawing.Size(169, 21);
             this.MainFormComboBox.TabIndex = 12;
             this.MainFormComboBox.Text = "All";
-            this.MainFormComboBox.SelectedIndexChanged += new System.EventHandler(this.MainFormComboBox_SelectedIndexChanged);
-            this.MainFormComboBox.Click += new System.EventHandler(this.MainFormComboBox_Click);
+            this.MainFormComboBox.SelectedIndexChanged += new System.EventHandler(this.MainFormComboBox_SelectedIndexChanged);            
             // 
             // RemoveNoteButton
             // 
