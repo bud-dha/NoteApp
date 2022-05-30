@@ -16,6 +16,10 @@ namespace NoteApp.Model
         /// </list>
         public List<Note> Notes { get; set; } = new List<Note>();
         /// <summary>
+        /// Возвращает и задает список заметок пользователя по категориям.
+        /// </summary>
+        public List<Note> NotesByCat { get; set; } = new List<Note>();
+        /// <summary>
         /// Текущая заметка.
         /// </summary>
         public Note CurrentNote { get; set; }

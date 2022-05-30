@@ -23,7 +23,8 @@ namespace NoteApp.View
             InitializeComponent();
 
             _project = new Project();
-            _project.Notes = new List<Note>();                     
+            _project.Notes = new List<Note>();
+            _project.NotesByCat = new List<Note>();
 
             foreach (var category in Enum.GetValues(typeof(NoteCategory)))
             {
@@ -57,11 +58,12 @@ namespace NoteApp.View
             MainFormListBox.Items.Clear();
 
             _project.Notes = _project.NotesByDate();
-            _project.Notes.Reverse();            
+            _project.Notes.Reverse();
+            _project.NotesByCat = CheckCategory(_project.Notes);
 
-            for (int i = 0; i < _project.Notes.Count; i++)
+            for (int i = 0; i < _project.NotesByCat.Count; i++)
             {
-                MainFormListBox.Items.Insert(i, _project.Notes.ToArray()[i].Title);
+                MainFormListBox.Items.Insert(i, _project.NotesByCat.ToArray()[i].Title);
             }
         }
         /// <summary>
