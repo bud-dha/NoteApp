@@ -38,6 +38,7 @@ namespace NoteApp.View
                 MainFormListBox.Items.Insert(i, _project.Notes.ToArray()[i].Title);
             }
         }
+
         /// <summary>
         /// Удаляет выбранную заметку из списка.
         /// </summary>
@@ -47,6 +48,7 @@ namespace NoteApp.View
             _project.Notes.RemoveAt(index);
             MainFormListBox.SetSelected(index, false);
         }
+
         /// <summary>
         /// Заполняет данные на правой панели главного окна.
         /// </summary>
@@ -65,6 +67,7 @@ namespace NoteApp.View
                 MainFormModifiedDateTimePicker.Text = _project.Notes.ToArray()[index].ModifiedDateTime.ToString();
             }
         }
+
         /// <summary>
         /// Очищает данные с правой панели главного окна.
         /// </summary>
@@ -78,84 +81,51 @@ namespace NoteApp.View
         }
 
         /// <summary>
-        /// Создает новую заметку.
+        /// Вызыывает метод создания заметки.
         /// </summary>
         private void AddNoteButton_Click(object sender, EventArgs e)
-        {            
-            var noteForm = new NoteForm(null);
-            var result = noteForm.ShowDialog();
-            if (result == DialogResult.OK && noteForm.Note != null)
-            {
-                _project.Notes.Add(noteForm.Note);
-            }
-
-            DialogResultMessage(result);
-            UpdateListBox();
+        {
+            AddNote();
         }
+
         /// <summary>
-        /// Создает новую заметку.
+        /// Вызыывает метод создания заметки.
         /// </summary>
         private void addNoteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddNoteButton_Click(sender, e);
+            AddNote();
         }
+
         /// <summary>
-        /// Редактирует заметку.
+        /// Вызывает метод редактирования заметки.
         /// </summary>
         private void EditNoteButton_Click(object sender, EventArgs e)
         {
-            var selectedIndex = MainFormListBox.SelectedIndex;
-            var selectedItem = _project.Notes[selectedIndex];
-            var noteForm = new NoteForm(selectedItem);
-            var result = noteForm.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                var updatedData = noteForm.Note;
-
-                MainFormListBox.Items.RemoveAt(selectedIndex);
-                _project.Notes.RemoveAt(selectedIndex);
-                _project.Notes.Insert(selectedIndex, updatedData);
-            }
-            DialogResultMessage(result);
-            UpdateListBox();
+            EditNote();
         }
+
         /// <summary>
-        /// Редактирует заметку.
+        /// Вызывает метод редактирования заметки.
         /// </summary>
         private void editNoteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EditNoteButton_Click(sender, e);
+            EditNote();
         }
+
         /// <summary>
-        /// Удаляет заметку.
+        /// Вызыывает метод удаления заметки.
         /// </summary>
         private void RemoveNoteButton_Click(object sender, EventArgs e)
         {
-            if (MainFormListBox.SelectedIndex == -1)
-            {
-                return;
-            }
-
-            var result = MessageBox.Show("Do you realy want to remove " + 
-                _project.Notes.ToArray()[MainFormListBox.SelectedIndex].Title + "?", "", MessageBoxButtons.YesNo);
-            
-            if (result == DialogResult.Yes)
-            {
-                RemoveNote(MainFormListBox.SelectedIndex);
-            }
-            else if(result == DialogResult.No)
-            {
-                return;
-            }
-
-            UpdateListBox();
+            RemoveNote();
         }
+
         /// <summary>
-        /// Удаляет заметку.
+        /// Вызыывает метод удаления заметки.
         /// </summary>
         private void removeNoteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RemoveNoteButton_Click(sender, e);
+            RemoveNote();
         }
 
         /// <summary>
@@ -193,20 +163,70 @@ namespace NoteApp.View
             {
                 e.Cancel = true;
             }
-            else {
+            else 
+            {
                 e.Cancel = false;
             }
         }
 
         /// <summary>
-        /// 
+        /// Создает заметку.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void MainFormComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void AddNote()
         {
-            
+            var noteForm = new NoteForm();
+            var result = noteForm.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                _project.Notes.Add(noteForm.Note);
+            }
+            UpdateListBox();
         }
+
+        /// <summary>
+        /// Редактирует заметку.
+        /// </summary>
+        private void EditNote()
+        {
+            var selectedIndex = MainFormListBox.SelectedIndex;
+            var selectedNote = _project.Notes[selectedIndex];
+            var noteForm = new NoteForm();
+            noteForm.Note = selectedNote;
+            var result = noteForm.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                var updatedData = noteForm.Note;
+
+                MainFormListBox.Items.RemoveAt(selectedIndex);
+                _project.Notes.RemoveAt(selectedIndex);
+                _project.Notes.Insert(selectedIndex, updatedData);
+            }
+            UpdateListBox();
+        }
+
+        /// <summary>
+        /// Удаляет заметку.
+        /// </summary>
+        private void RemoveNote()
+        {
+            if (MainFormListBox.SelectedIndex == -1)
+            {
+                return;
+            }
+            var result = MessageBox.Show("Do you realy want to remove " +
+                _project.Notes.ToArray()[MainFormListBox.SelectedIndex].Title + "?", "", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                RemoveNote(MainFormListBox.SelectedIndex);
+            }
+            else if (result == DialogResult.No)
+            {
+                return;
+            }
+            UpdateListBox();
+        }
+
         /// <summary>
         /// 
         /// </summary>
@@ -215,21 +235,6 @@ namespace NoteApp.View
         private void MainFormComboBox_Click(object sender, EventArgs e)
         {
             MainFormComboBox.DataSource = Enum.GetValues(typeof(NoteCategory));
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        private void DialogResultMessage(DialogResult result)
-        {
-            if (result == DialogResult.OK)
-            {
-                MessageBox.Show("Note saved");
-            }
-            else
-            {
-                MessageBox.Show("Note not be saved!");
-            }
         }
     }
 }
