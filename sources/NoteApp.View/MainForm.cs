@@ -27,6 +27,14 @@ namespace NoteApp.View
 
             _project = new Project();
             _project.Notes = new List<Note>();
+
+            foreach (var category in Enum.GetValues(typeof(NoteCategory)))
+            {
+                MainFormComboBox.Items.Add(category);
+            }
+
+            MainFormComboBox.Items.Add("All");
+            MainFormComboBox.SelectedItem = "All";
         }
 
         /// <summary>
@@ -217,8 +225,8 @@ namespace NoteApp.View
             {
                 return;
             }
-            var result = MessageBox.Show("Вы действительно хотите удалить " +
-                _project.Notes.ToArray()[MainFormListBox.SelectedIndex].Title + "?", "", MessageBoxButtons.YesNo);
+            var result = MessageBox.Show("Вы действительно хотите удалить '" +
+                _project.Notes.ToArray()[MainFormListBox.SelectedIndex].Title + "'?", "", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)
             {
@@ -229,16 +237,6 @@ namespace NoteApp.View
                 return;
             }
             UpdateListBox();
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void MainFormComboBox_Click(object sender, EventArgs e)
-        {
-            MainFormComboBox.DataSource = Enum.GetValues(typeof(NoteCategory));
         }
     }
 }
