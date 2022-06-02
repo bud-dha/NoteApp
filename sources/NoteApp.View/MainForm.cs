@@ -18,6 +18,9 @@ namespace NoteApp.View
         /// </summary>
         private Project _project;
 
+        /// <summary>
+        /// Конструктор формы.
+        /// </summary>
         public MainForm()
         {
             InitializeComponent();
@@ -158,7 +161,7 @@ namespace NoteApp.View
         /// </summary>
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            var result =  MessageBox.Show("Do you really want to close the program?", "" , MessageBoxButtons.YesNo);
+            var result =  MessageBox.Show("Вы действительно хотите закрыть программу?", "" , MessageBoxButtons.YesNo);
             if (result == DialogResult.No)
             {
                 e.Cancel = true;
@@ -189,10 +192,11 @@ namespace NoteApp.View
         private void EditNote()
         {
             var selectedIndex = MainFormListBox.SelectedIndex;
-            var selectedNote = _project.Notes[selectedIndex];
+            var selectedNote = _project.Notes[selectedIndex];            
             var noteForm = new NoteForm();
             noteForm.Note = selectedNote;
             var result = noteForm.ShowDialog();
+            
             if (result == DialogResult.OK)
             {
                 var updatedData = noteForm.Note;
@@ -200,8 +204,8 @@ namespace NoteApp.View
                 MainFormListBox.Items.RemoveAt(selectedIndex);
                 _project.Notes.RemoveAt(selectedIndex);
                 _project.Notes.Insert(selectedIndex, updatedData);
-            }
-            UpdateListBox();
+                UpdateListBox();
+            }            
         }
 
         /// <summary>
@@ -213,7 +217,7 @@ namespace NoteApp.View
             {
                 return;
             }
-            var result = MessageBox.Show("Do you realy want to remove " +
+            var result = MessageBox.Show("Вы действительно хотите удалить " +
                 _project.Notes.ToArray()[MainFormListBox.SelectedIndex].Title + "?", "", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)

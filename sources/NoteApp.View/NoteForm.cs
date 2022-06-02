@@ -31,13 +31,14 @@ namespace NoteApp.View
         /// <summary>
         /// Свойство для передачи новой заметки.
         /// </summary>
-        public Note Note { get; set; }
+        public Note Note { get; set; } = new Note();
      
+        /// <summary>
+        /// Конструктор формы.
+        /// </summary>
         public NoteForm()
         {
             InitializeComponent();
-
-            Note = new Note();
 
             NoteFormComboBox.DataSource = Enum.GetValues(typeof(NoteCategory));
 
