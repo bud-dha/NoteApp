@@ -15,6 +15,7 @@ namespace NoteApp.Model
         /// Возвращает и задает список заметок пользователя.
         /// </list>
         public List<Note> Notes { get; set; } = new List<Note>();
+
         /// <summary>
         /// Возвращает и задает список заметок пользователя по категориям.
         /// </summary>
@@ -31,6 +32,7 @@ namespace NoteApp.Model
             }
             return Notes;
         }
+
         /// <summary>
         /// Возвращает список заметок отсортированных по катрегории.
         /// </summary>
