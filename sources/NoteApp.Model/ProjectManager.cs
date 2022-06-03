@@ -17,6 +17,7 @@ namespace NoteApp.Model
         /// Название файла сохранения.
         /// </summary>
         public static string FileName = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\" + "NoteApp";
+
         /// <summary>
         /// Сохраняет данные в файл.
         /// </summary>        
@@ -29,6 +30,7 @@ namespace NoteApp.Model
                 serializer.Serialize(writer, project);
             }
         }
+
         /// <summary>
         /// Возвращает данные из файла.
         /// </summary>        

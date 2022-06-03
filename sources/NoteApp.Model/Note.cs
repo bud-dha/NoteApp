@@ -36,7 +36,6 @@ namespace NoteApp.Model
         /// </summary>
         public DateTime ModifiedDateTime { get; private set; } = DateTime.Now;
 
-
         /// <summary>
         /// Возвращает и задает категорию заметки.
         /// </summary>
@@ -98,7 +97,6 @@ namespace NoteApp.Model
             Category = category;
         }
 
-
         /// <summary>
         /// Создает экземпляр кдасса <see cref="Note">
         /// </summary>
@@ -119,6 +117,5 @@ namespace NoteApp.Model
             
             return note;
         }
-
     }
 }
