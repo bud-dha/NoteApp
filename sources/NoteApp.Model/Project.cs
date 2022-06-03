@@ -32,6 +32,7 @@ namespace NoteApp.Model
             }
             return Notes;
         }
+
         /// <summary>
         /// Возвращает список заметок отсортированных по катрегории.
         /// </summary>

@@ -16,7 +16,7 @@ namespace NoteApp.View
         /// <summary>
         /// Объект класса Project.
         /// </summary>
-        private Project _project;
+        public Project Project { get; set; }
 
         /// <summary>
         /// Конструктор формы.
@@ -25,8 +25,8 @@ namespace NoteApp.View
         {
             InitializeComponent();
 
-            _project = new Project();
-            _project.Notes = new List<Note>();
+            Project = new Project();
+            Project.Notes = new List<Note>();
 
             foreach (var category in Enum.GetValues(typeof(NoteCategory)))
             {
@@ -44,9 +44,9 @@ namespace NoteApp.View
         {
             MainFormListBox.Items.Clear();
 
-            for (int i = 0; i < _project.Notes.Count; i++)
+            for (int i = 0; i < Project.Notes.Count; i++)
             {
-                MainFormListBox.Items.Insert(i, _project.Notes.ToArray()[i].Title);
+                MainFormListBox.Items.Insert(i, Project.Notes.ToArray()[i].Title);
             }
         }
 
@@ -56,7 +56,7 @@ namespace NoteApp.View
         /// <param name="index">Индекс удаляемого из списка элемента</param>
         private void RemoveNote(int index)
         {
-            _project.Notes.RemoveAt(index);
+            Project.Notes.RemoveAt(index);
             MainFormListBox.SetSelected(index, false);
         }
 
@@ -71,11 +71,11 @@ namespace NoteApp.View
             }
             else
             {
-                HeadingLabel.Text = _project.Notes.ToArray()[index].Title;
-                MainFormCurentCategoryLable.Text = _project.Notes.ToArray()[index].Category.ToString();
-                MainFormTextBox.Text = _project.Notes.ToArray()[index].Text;
-                MainFormCreatedDateTimePicker.Text = _project.Notes.ToArray()[index].CreatedDateTime.ToString();
-                MainFormModifiedDateTimePicker.Text = _project.Notes.ToArray()[index].ModifiedDateTime.ToString();
+                HeadingLabel.Text = Project.Notes.ToArray()[index].Title;
+                MainFormCurentCategoryLable.Text = Project.Notes.ToArray()[index].Category.ToString();
+                MainFormTextBox.Text = Project.Notes.ToArray()[index].Text;
+                MainFormCreatedDateTimePicker.Text = Project.Notes.ToArray()[index].CreatedDateTime.ToString();
+                MainFormModifiedDateTimePicker.Text = Project.Notes.ToArray()[index].ModifiedDateTime.ToString();
             }
         }
 
@@ -189,7 +189,7 @@ namespace NoteApp.View
             var result = noteForm.ShowDialog();
             if (result == DialogResult.OK)
             {
-                _project.Notes.Add(noteForm.Note);
+                Project.Notes.Add(noteForm.Note);
             }
             UpdateListBox();
         }
@@ -200,7 +200,7 @@ namespace NoteApp.View
         private void EditNote()
         {
             var selectedIndex = MainFormListBox.SelectedIndex;
-            var selectedNote = _project.Notes[selectedIndex];            
+            var selectedNote = Project.Notes[selectedIndex];            
             var noteForm = new NoteForm();
             noteForm.Note = selectedNote;
             var result = noteForm.ShowDialog();
@@ -210,8 +210,8 @@ namespace NoteApp.View
                 var updatedData = noteForm.Note;
 
                 MainFormListBox.Items.RemoveAt(selectedIndex);
-                _project.Notes.RemoveAt(selectedIndex);
-                _project.Notes.Insert(selectedIndex, updatedData);
+                Project.Notes.RemoveAt(selectedIndex);
+                Project.Notes.Insert(selectedIndex, updatedData);
                 UpdateListBox();
             }            
         }
@@ -226,7 +226,7 @@ namespace NoteApp.View
                 return;
             }
             var result = MessageBox.Show("Вы действительно хотите удалить '" +
-                _project.Notes.ToArray()[MainFormListBox.SelectedIndex].Title + "'?", "", MessageBoxButtons.YesNo);
+                Project.Notes.ToArray()[MainFormListBox.SelectedIndex].Title + "'?", "", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)
             {
