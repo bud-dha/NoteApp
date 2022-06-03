@@ -29,9 +29,22 @@ namespace NoteApp.View
         private string _titleError;
 
         /// <summary>
-        /// Свойство для передачи новой заметки.
+        /// Свойство для передачи заметки.
         /// </summary>
-        public Note Note { get; set; } = new Note(); 
+        private Note _note = new Note();
+
+        /// <summary>
+        /// Возвращает и задает свойство для передачи заметки.
+        /// </summary>
+        public Note Note
+        {
+            get => _note;
+            set
+            {
+                _note = value;
+                UpdateForm();
+            }
+        }
 
         /// <summary>
         /// Конструктор формы.
