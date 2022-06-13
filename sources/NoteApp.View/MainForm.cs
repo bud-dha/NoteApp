@@ -14,6 +14,11 @@ namespace NoteApp.View
     public partial class MainForm : Form
     {
         /// <summary>
+        /// Возвращает и задает текущий список заметок пользователя.
+        /// </summary>
+        private List<Note> CurentNotes { get; set; }
+
+        /// <summary>
         /// Объект класса Project.
         /// </summary>
         public Project Project { get; set; }
@@ -27,7 +32,7 @@ namespace NoteApp.View
 
             Project = new Project();
             Project.Notes = new List<Note>();
-            Project.NotesByCat = new List<Note>();
+            CurentNotes = new List<Note>();
 
             foreach (var category in Enum.GetValues(typeof(NoteCategory)))
             {
@@ -47,11 +52,11 @@ namespace NoteApp.View
             MainFormListBox.Items.Clear();
             Project.Notes = Project.NotesByDate();
             Project.Notes.Reverse();
-            Project.NotesByCat = CheckCategory(Project.Notes);            
+            CurentNotes = CheckCategory(Project.Notes);            
 
-            for (int i = 0; i < Project.NotesByCat.Count; i++)
+            for (int i = 0; i < CurentNotes.Count; i++)
             {
-                MainFormListBox.Items.Insert(i, Project.NotesByCat.ToArray()[i].Title);
+                MainFormListBox.Items.Insert(i, CurentNotes.ToArray()[i].Title);
             }
         }
 
@@ -70,17 +75,26 @@ namespace NoteApp.View
         /// </summary>
         private void UpdateSelectedNote(int index)
         {
+            int curentIndex = 0;
+
             if (MainFormListBox.SelectedIndex == -1)
             {
                 ClearSelectedNote();
             }
             else
             {
-                HeadingLabel.Text = Project.NotesByCat.ToArray()[index].Title;
-                MainFormCurentCategoryLable.Text = Project.NotesByCat.ToArray()[index].Category.ToString();
-                MainFormTextBox.Text = Project.NotesByCat.ToArray()[index].Text;
-                MainFormCreatedDateTimePicker.Text = Project.NotesByCat.ToArray()[index].CreatedDateTime.ToString();
-                MainFormModifiedDateTimePicker.Text = Project.NotesByCat.ToArray()[index].ModifiedDateTime.ToString();
+                for (int i= 0; i < CurentNotes.Count; i++ )
+                {
+                    if (CurentNotes.ToArray()[index].Text == Project.Notes.ToArray()[i].Text)
+                    {
+                        curentIndex = i;
+                    }
+                }
+                HeadingLabel.Text = CurentNotes.ToArray()[curentIndex].Title;
+                MainFormCurentCategoryLable.Text = CurentNotes.ToArray()[curentIndex].Category.ToString();
+                MainFormTextBox.Text = CurentNotes.ToArray()[curentIndex].Text;
+                MainFormCreatedDateTimePicker.Text = CurentNotes.ToArray()[curentIndex].CreatedDateTime.ToString();
+                MainFormModifiedDateTimePicker.Text = CurentNotes.ToArray()[curentIndex].ModifiedDateTime.ToString();
             }
         }
 

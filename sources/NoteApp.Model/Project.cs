@@ -15,11 +15,6 @@ namespace NoteApp.Model
         /// Возвращает и задает список заметок пользователя.
         /// </list>
         public List<Note> Notes { get; set; } = new List<Note>();
-
-        /// <summary>
-        /// Возвращает и задает список заметок пользователя по категориям.
-        /// </summary>
-        public List<Note> NotesByCat { get; set; } = new List<Note>();
         
         /// <summary>
         /// Возвращает список заметок отсортированных по дате редактирования.
