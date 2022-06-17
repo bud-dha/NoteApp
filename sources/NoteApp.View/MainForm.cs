@@ -77,26 +77,17 @@ namespace NoteApp.View
         /// </summary>
         private void UpdateSelectedNote(int index)
         {
-            int curentIndex = 0;
-
             if (MainFormListBox.SelectedIndex == -1)
             {
                 ClearSelectedNote();
             }
             else
             {
-                for (int i= 0; i < CurentNotes.Count; i++ )
-                {
-                    if (CurentNotes.ToArray()[index].Text == Project.Notes.ToArray()[i].Text)
-                    {
-                        curentIndex = i;
-                    }
-                }
-                HeadingLabel.Text = CurentNotes.ToArray()[curentIndex].Title;
-                MainFormCurentCategoryLable.Text = CurentNotes.ToArray()[curentIndex].Category.ToString();
-                MainFormTextBox.Text = CurentNotes.ToArray()[curentIndex].Text;
-                MainFormCreatedDateTimePicker.Text = CurentNotes.ToArray()[curentIndex].CreatedDateTime.ToString();
-                MainFormModifiedDateTimePicker.Text = CurentNotes.ToArray()[curentIndex].ModifiedDateTime.ToString();
+                HeadingLabel.Text = CurentNotes.ToArray()[index].Title;
+                MainFormCurentCategoryLable.Text = CurentNotes.ToArray()[index].Category.ToString();
+                MainFormTextBox.Text = CurentNotes.ToArray()[index].Text;
+                MainFormCreatedDateTimePicker.Text = CurentNotes.ToArray()[index].CreatedDateTime.ToString();
+                MainFormModifiedDateTimePicker.Text = CurentNotes.ToArray()[index].ModifiedDateTime.ToString();
             }
         }
 
@@ -247,7 +238,7 @@ namespace NoteApp.View
             try
             {
                 var selectedIndex = MainFormListBox.SelectedIndex;
-                var selectedNote = Project.Notes[selectedIndex];
+                var selectedNote = CurentNotes[selectedIndex];
                 var noteForm = new NoteForm();
                 noteForm.Note = selectedNote;
                 var result = noteForm.ShowDialog();
@@ -295,32 +286,27 @@ namespace NoteApp.View
         }
 
         /// <summary>
-        /// 
+        /// Возвращает отсортированнный список заметок.
         /// </summary>
         private List<Note> CheckCategory(List<Note> Notes)
         {
             switch (MainFormComboBox.SelectedIndex)
             {
                 case 0:
-                   Notes = Project.NotesByCategory(NoteCategory.Work);
-                   return Notes;
+                   return Project.NotesByCategory(NoteCategory.Work);
                 case 1:
-                    Notes = Project.NotesByCategory(NoteCategory.Home);
-                    return Notes;
+                    return Project.NotesByCategory(NoteCategory.Home);
                 case 2:
-                    Notes = Project.NotesByCategory(NoteCategory.HealthAndSports);
-                    return Notes;
+                    return Project.NotesByCategory(NoteCategory.HealthAndSports);
                 case 3:
-                    Notes = Project.NotesByCategory(NoteCategory.People);
-                    return Notes;
+                    return Project.NotesByCategory(NoteCategory.People);
                 case 4:
-                    Notes = Project.NotesByCategory(NoteCategory.Documents);
-                    return Notes;
+                    return Project.NotesByCategory(NoteCategory.Documents);
                 case 5:
-                    Notes = Project.NotesByCategory(NoteCategory.Finance);
-                    return Notes;
+                    return Project.NotesByCategory(NoteCategory.Finance);
                 case 6:
-                    Notes = Project.NotesByCategory(NoteCategory.Other);
+                    return Project.NotesByCategory(NoteCategory.Other);
+                case 7:
                     return Notes;
             }
             return Notes;
