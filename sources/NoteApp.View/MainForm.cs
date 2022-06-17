@@ -33,6 +33,7 @@ namespace NoteApp.View
             Project = new Project();
             Project.Notes = new List<Note>();
             CurentNotes = new List<Note>();
+            CurentNotes = Project.Notes;
 
             foreach (var category in Enum.GetValues(typeof(NoteCategory)))
             {
@@ -50,9 +51,9 @@ namespace NoteApp.View
         private void UpdateListBox()
         {
             MainFormListBox.Items.Clear();
-            Project.Notes = Project.NotesByDate();
+            Project.Notes = Project.NotesByDate();  
             Project.Notes.Reverse();
-            CurentNotes = CheckCategory(Project.Notes);            
+            CurentNotes = CheckCategory(CurentNotes);            
 
             for (int i = 0; i < CurentNotes.Count; i++)
             {
@@ -189,9 +190,6 @@ namespace NoteApp.View
             }
         }
 
-        /// <summary>
-        /// Возвращает список заметок по категории.
-        /// </summary>
         private void MainFormComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateListBox();
@@ -225,9 +223,10 @@ namespace NoteApp.View
             {
                 var updatedData = noteForm.Note;
 
-                MainFormListBox.Items.RemoveAt(selectedIndex);
-                Project.Notes.RemoveAt(selectedIndex);
-                Project.Notes.Insert(selectedIndex, updatedData);
+                MainFormListBox.Items.RemoveAt(selectedIndex);                                          
+                CurentNotes.RemoveAt(selectedIndex);
+                CurentNotes.Insert(selectedIndex, updatedData);
+                Project.Notes[Project.Notes.IndexOf(CurentNotes[selectedIndex])] = CurentNotes[selectedIndex];
                 UpdateListBox();
             }
         }
@@ -260,7 +259,7 @@ namespace NoteApp.View
         /// <summary>
         /// Возвращает список заметок по выбранной категории.
         /// </summary>
-        private List<Note> CheckCategory(List<Note> Notes)
+        private List<Note> CheckCategory(List<Note> CurentNotes)
         {
             switch (MainFormComboBox.SelectedIndex)
             {
@@ -277,11 +276,11 @@ namespace NoteApp.View
                 case 5:
                     return Project.NotesByCategory(NoteCategory.Finance);                    
                 case 6:
-                    return Project.NotesByCategory(NoteCategory.Other);                    
+                    return Project.NotesByCategory(NoteCategory.Other);
                 case 7:
-                    return Notes;
+                    return Project.Notes;
             }
-            return Notes;
+            return CurentNotes;
         }
 
     }
