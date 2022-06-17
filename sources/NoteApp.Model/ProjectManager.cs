@@ -16,7 +16,7 @@ namespace NoteApp.Model
         /// <summary>
         /// Название файла сохранения.
         /// </summary>
-        public static string FileName = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\" + "NoteApp";
+        public static string FileName = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\" + "NoteApp.json";
 
         /// <summary>
         /// Сохраняет данные в файл.

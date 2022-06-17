@@ -21,7 +21,7 @@ namespace NoteApp.View
         /// <summary>
         /// Объект класса Project.
         /// </summary>
-        private Project Project;
+        private Project Project { get; set; }
 
         /// <summary>
         /// Конструктор формы.
@@ -29,10 +29,14 @@ namespace NoteApp.View
         public MainForm()
         {
             Project = ProjectSerializer.LoadFromFile();
+            if (Project == null)
+            {
+                Project = new Project();
+                Project.Notes = new List<Note>();               
+            }
+
             InitializeComponent();
 
-            Project = new Project();
-            Project.Notes = new List<Note>();
             CurentNotes = new List<Note>();
 
             foreach (var category in Enum.GetValues(typeof(NoteCategory)))
