@@ -286,7 +286,7 @@ namespace NoteApp.View
         }
 
         /// <summary>
-        /// Возвращает отсортированнный список заметок.
+        /// Возвращает список заметок по выбранной категории.
         /// </summary>
         private List<Note> CheckCategory(List<Note> Notes)
         {
