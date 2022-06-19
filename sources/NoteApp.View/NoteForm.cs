@@ -77,6 +77,8 @@ namespace NoteApp.View
             Note.Title = TitleTextBox.Text;
             Note.Category = (NoteCategory)NoteFormComboBox.SelectedItem;
             Note.Text = NoteFormTextBox.Text;
+            Note.CreatedDateTime = DateTime.Now;
+            Note.ModifiedDateTime = DateTime.Now;
         }
 
         /// <summary>

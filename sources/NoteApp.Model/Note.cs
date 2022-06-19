@@ -29,12 +29,12 @@ namespace NoteApp.Model
         /// <summary>
         /// Возвращает время создания заметки.
         /// </summary>
-        public DateTime CreatedDateTime { get; private set; } = DateTime.Now;
+        public DateTime CreatedDateTime { get; set; }
 
         /// <summary>
         /// Возвращает время изменения заметки. 
         /// </summary>
-        public DateTime ModifiedDateTime { get; private set; } = DateTime.Now;
+        public DateTime ModifiedDateTime { get; set; }
 
         /// <summary>
         /// Возвращает и задает категорию заметки.

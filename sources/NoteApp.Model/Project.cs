@@ -23,7 +23,7 @@ namespace NoteApp.Model
         {
             if (Notes.Count != 0)
             {
-                return Notes.OrderBy(t => t.ModifiedDateTime).ToList();
+                return Notes.OrderBy(t => t.CreatedDateTime).ToList();
             }
             return Notes;
         }
