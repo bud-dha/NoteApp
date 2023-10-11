@@ -404,4 +404,3 @@
         private System.Windows.Forms.ToolStripMenuItem removeNoteToolStripMenuItem;
     }
 }
-

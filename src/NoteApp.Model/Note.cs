@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace NoteApp.Model 
+namespace NoteApp.Model
 {
     /// <summary>
     /// Класс заметок.
@@ -103,7 +99,7 @@ namespace NoteApp.Model
         /// Создает экземпляр кдасса <see cref="Note">
         /// </summary>
         public Note() { }
-        
+
         /// <summary>
         /// Создает копию класса <see cref="Note">
         /// </summary>
@@ -116,7 +112,7 @@ namespace NoteApp.Model
             note.Category = this.Category;
             note.CreatedDateTime = this.CreatedDateTime;
             note.ModifiedDateTime = this.ModifiedDateTime;
-            
+
             return note;
         }
 
